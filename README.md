@@ -3,3 +3,4 @@ willemijn-clicker
 <!doctype html>
 </head>
 </body>
+console.log("Goodbye, World!");
