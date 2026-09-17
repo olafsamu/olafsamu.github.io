@@ -1,6 +1,6 @@
-# olafsamu.github.io
-willemijn-clicker
-<!doctype html>
-</head>
-</body>
-console.log("Goodbye, World!");
+<<<<<<< HEAD
+
+
+=======
+
+>>>>>>> d525e7c275ef8ce781e2733bce7bbab99535c684
