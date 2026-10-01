@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -34,7 +35,7 @@
             padding: 15px 35px;
             display: flex;
             justify-content: flex-end;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         .dropdown {
@@ -58,10 +59,10 @@
             position: absolute;
             right: 0;
             background: #202a33;
-            min-width: 260px;
+            min-width: 280px;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
         }
 
         .dropdown-content a {
@@ -86,24 +87,42 @@
         ========================= */
 
         .hero {
-            height: 100vh;
-            min-height: 650px;
-
-            background-image:
-                linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.75)),
-                url("https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/960090/header.jpg");
-
-            background-size: cover;
-            background-position: center;
+            position: relative;
+            min-height: 100vh;
+            overflow: hidden;
 
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
+
             padding: 30px;
         }
 
+        .btd6-image {
+            position: absolute;
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            object-position: center;
+
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 1;
+        }
+
         .hero-content {
+            position: relative;
+            z-index: 2;
             max-width: 850px;
         }
 
@@ -115,7 +134,7 @@
 
         .hero p {
             font-size: 22px;
-            background: rgba(0,0,0,0.65);
+            background: rgba(0, 0, 0, 0.65);
             padding: 15px 25px;
             border-radius: 10px;
         }
@@ -180,7 +199,7 @@
             padding: 25px;
             margin: 20px 0;
             border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
         }
 
         /* =========================
@@ -223,16 +242,25 @@
             max-width: 100%;
         }
 
-        .game-image {
+        .game-link {
             display: block;
             width: 100%;
             max-width: 700px;
-            height: 180px;
             margin: 25px auto;
-            border-radius: 12px;
             text-decoration: none;
+        }
+
+        .game-image {
+            width: 100%;
+            height: 180px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transition: 0.2s;
+        }
+
+        .game-image:hover {
+            transform: scale(1.02);
         }
 
         .binary-art {
@@ -313,7 +341,8 @@
             background: #202d38;
         }
 
-        th, td {
+        th,
+        td {
             padding: 14px;
             border: 1px solid #40515f;
             text-align: left;
@@ -336,7 +365,7 @@
         }
 
         /* =========================
-           RESPONSIVE
+           MOBIEL
         ========================= */
 
         @media (max-width: 800px) {
@@ -366,594 +395,604 @@
                 right: 0;
                 min-width: 230px;
             }
+
+            .binary-art .big {
+                font-size: 28px;
+            }
+
+            .binary-art .small {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<!-- =========================
-     NAVIGATIE
-========================= -->
+    <!-- =========================
+         NAVIGATIE
+    ========================= -->
 
-<nav>
-    <div class="dropdown">
-        <button class="dropbtn">☰ Menu</button>
+    <nav>
+        <div class="dropdown">
+            <button class="dropbtn">☰ Menu</button>
 
-        <div class="dropdown-content">
-            <a href="#home">Home</a>
-            <a href="#binair">Binair stelsel</a>
-            <a href="#kleurmodellen">Kleurmodellen</a>
-            <a href="#compressie">Compressie: Bitmap / Vector</a>
-            <a href="#ai">AI</a>
-            <a href="#mijn-ai">Waar gebruik ik AI voor?</a>
-            <a href="#mobiel">AI in mijn mobiele telefoon</a>
-            <a href="#artikel">AI-artikel</a>
+            <div class="dropdown-content">
+                <a href="#home">Home</a>
+                <a href="#binair">Binair stelsel</a>
+                <a href="#kleurmodellen">Kleurmodellen</a>
+                <a href="#compressie">Compressie: Bitmap / Vector</a>
+                <a href="#ai">AI</a>
+                <a href="#mijn-ai">Waar gebruik ik AI voor?</a>
+                <a href="#mobiel">AI in mijn mobiele telefoon</a>
+                <a href="#artikel">AI-artikel</a>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
 
-<!-- =========================
-     HOMEPAGE
-========================= -->
+    <!-- =========================
+         HOMEPAGE
+    ========================= -->
 
-<section class="hero" id="home">
+    <section class="hero" id="home">
 
-    <div class="hero-content">
+        <!-- Jouw afbeelding uit GitHub -->
+        <img
+            src="./images%20%284%29.jpeg"
+            alt="Bloons TD 6"
+            class="btd6-image"
+        >
 
-        <h1>BTD6</h1>
+        <div class="hero-content">
 
-        <p>
-            Mijn website over informatica, met Bloons TD 6 als thema.
-            Hier vind je informatie over het binaire stelsel,
-            kleurmodellen, compressie en kunstmatige intelligentie.
-        </p>
-
-        <a href="#binair" class="button">
-            Bekijk de onderwerpen
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     BINARIE STELSEL
-========================= -->
-
-<section id="binair">
-
-    <div class="container">
-
-        <h2>Binair stelsel</h2>
-
-        <div class="card">
+            <h1>BTD6</h1>
 
             <p>
-                Computers werken met het binaire stelsel. In plaats van
-                de cijfers 0 tot en met 9 gebruikt het binaire stelsel
-                alleen de cijfers <strong>0 en 1</strong>.
+                Mijn website over informatica, met Bloons TD 6 als thema.
+                Hier vind je informatie over het binaire stelsel,
+                kleurmodellen, compressie en kunstmatige intelligentie.
             </p>
 
-            <p>
-                Een 0 en een 1 kunnen bijvoorbeeld worden gebruikt om
-                aan te geven of iets uit of aan staat. Computers kunnen
-                met deze twee waarden heel veel informatie opslaan en verwerken.
-            </p>
-
-            <h3>Voorbeeld</h3>
-
-            <p>
-                Het decimale getal 13 kan worden geschreven als:
-            </p>
-
-            <p style="font-size: 25px; text-align: center;">
-                <strong>1101₂ = 13₁₀</strong>
-            </p>
+            <a href="#binair" class="button">
+                Bekijk de onderwerpen
+            </a>
 
         </div>
 
+    </section>
 
-        <div class="binary-box">
 
-            <div class="bit">
-                <strong>0</strong>
-                <p>Uit / false</p>
+    <!-- =========================
+         BINARIE STELSEL
+    ========================= -->
+
+    <section id="binair">
+
+        <div class="container">
+
+            <h2>Binair stelsel</h2>
+
+            <div class="card">
+
+                <p>
+                    Computers werken met het binaire stelsel. In plaats van
+                    de cijfers 0 tot en met 9 gebruikt het binaire stelsel
+                    alleen de cijfers <strong>0 en 1</strong>.
+                </p>
+
+                <p>
+                    Een 0 en een 1 kunnen bijvoorbeeld worden gebruikt om
+                    aan te geven of iets uit of aan staat. Computers kunnen
+                    met deze twee waarden heel veel informatie opslaan en verwerken.
+                </p>
+
+                <h3>Voorbeeld</h3>
+
+                <p>
+                    Het decimale getal 13 kan worden geschreven als:
+                </p>
+
+                <p style="font-size: 25px; text-align: center;">
+                    <strong>1101₂ = 13₁₀</strong>
+                </p>
+
             </div>
 
-            <div class="bit">
-                <strong>1</strong>
-                <p>Aan / true</p>
+            <div class="binary-box">
+
+                <div class="bit">
+                    <strong>0</strong>
+                    <p>Uit / false</p>
+                </div>
+
+                <div class="bit">
+                    <strong>1</strong>
+                    <p>Aan / true</p>
+                </div>
+
+                <div class="bit">
+                    <strong>8</strong>
+                    <p>2³</p>
+                </div>
+
+                <div class="bit">
+                    <strong>4</strong>
+                    <p>2²</p>
+                </div>
+
             </div>
 
-            <div class="bit">
-                <strong>8</strong>
-                <p>2³</p>
-            </div>
 
-            <div class="bit">
-                <strong>4</strong>
-                <p>2²</p>
-            </div>
+            <div class="card">
 
-        </div>
+                <h3>Binary Bonanza</h3>
+
+                <p>
+                    Met Binary Bonanza kun je op een leuke manier oefenen
+                    met het binaire stelsel.
+                </p>
+
+                <!-- Klikbare afbeelding -->
+                <a
+                    href="https://games.penjee.com/binary-bonanza/game.php"
+                    target="_blank"
+                    class="game-link"
+                >
+                    <div class="game-image">
+
+                        <div class="binary-art">
+
+                            <span class="small">
+                                01001001 01001110 01000110 01001111
+                            </span>
+
+                            <span class="big">
+                                BINARY BONANZA
+                            </span>
+
+                            <span class="small">
+                                KLIK HIER OM TE SPELEN
+                            </span>
+
+                        </div>
+
+                    </div>
+                </a>
 
 
-        <div class="card">
+                <!-- Jouw Binary Bonanza game -->
+                <div class="game-container">
 
-            <h3>Binary Bonanza</h3>
-
-            <p>
-                Met Binary Bonanza kun je op een leuke manier oefenen
-                met het binaire stelsel.
-            </p>
-
-
-            <!-- Klikbare afbeelding -->
-            <a
-                href="https://games.penjee.com/binary-bonanza/game.php"
-                target="_blank"
-                class="game-image"
-            >
-
-                <div class="binary-art">
-
-                    <span class="small">
-                        01001001 01001110 01000110 01001111
-                    </span>
-
-                    <span class="big">
-                        BINARY BONANZA
-                    </span>
-
-                    <span class="small">
-                        KLIK HIER OM TE SPELEN
-                    </span>
+                    <iframe
+                        src="https://games.penjee.com/binary-bonanza/game.php"
+                        width="700"
+                        height="500"
+                        frameborder="no"
+                        scrolling="no">
+                    </iframe>
 
                 </div>
 
-            </a>
+            </div>
+
+        </div>
+
+    </section>
 
 
-            <!-- Jouw originele iframe -->
-            <div class="game-container">
+    <!-- =========================
+         KLEURMODELLEN
+    ========================= -->
 
-                <iframe
-                    src="https://games.penjee.com/binary-bonanza/game.php"
-                    width="700"
-                    height="500"
-                    frameborder="no"
-                    scrolling="no">
-                </iframe>
+    <section id="kleurmodellen">
+
+        <div class="container">
+
+            <h2>Kleurmodellen</h2>
+
+            <p>
+                Kleurmodellen worden gebruikt om kleuren digitaal weer te geven.
+                Er bestaan verschillende modellen voor verschillende toepassingen.
+            </p>
+
+            <div class="color-grid">
+
+                <div class="card rgb">
+
+                    <h3>RGB</h3>
+
+                    <p>
+                        RGB staat voor Red, Green en Blue.
+                        Dit model wordt vooral gebruikt voor schermen,
+                        zoals computers, telefoons en televisies.
+                    </p>
+
+                    <p>
+                        Door rood, groen en blauw in verschillende sterktes
+                        te combineren kunnen heel veel kleuren worden gemaakt.
+                    </p>
+
+                </div>
+
+
+                <div class="card cmyk">
+
+                    <h3>CMYK</h3>
+
+                    <p>
+                        CMYK staat voor Cyan, Magenta, Yellow en Key/Black.
+                        Dit kleurmodel wordt vooral gebruikt bij printers.
+                    </p>
+
+                    <p>
+                        De kleuren worden gemengd met inkt in plaats van met licht.
+                    </p>
+
+                </div>
+
+
+                <div class="card hex">
+
+                    <h3>HEX</h3>
+
+                    <p>
+                        HEX-codes worden veel gebruikt op websites.
+                        Een kleur wordt weergegeven met zes tekens.
+                    </p>
+
+                    <p>
+                        Bijvoorbeeld:
+                        <strong>#FF0000</strong> betekent rood.
+                    </p>
+
+                </div>
+
+
+                <div class="card hsv">
+
+                    <h3>HSV</h3>
+
+                    <p>
+                        HSV betekent Hue, Saturation en Value.
+                        Hiermee kun je kleuren beschrijven op basis van
+                        kleur, verzadiging en helderheid.
+                    </p>
+
+                </div>
 
             </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- =========================
-     KLEURMODELLEN
-========================= -->
+    <!-- =========================
+         COMPRESSIE
+    ========================= -->
 
-<section id="kleurmodellen">
+    <section id="compressie">
 
-    <div class="container">
+        <div class="container">
 
-        <h2>Kleurmodellen</h2>
+            <h2>Compressie: Bitmap / Vector</h2>
+
+            <div class="card">
+
+                <h3>Bitmap</h3>
+
+                <p>
+                    Een bitmapafbeelding bestaat uit heel veel kleine pixels.
+                    Elke pixel heeft informatie over bijvoorbeeld de kleur.
+                </p>
+
+                <p>
+                    Een voordeel is dat foto's er goed mee kunnen worden weergegeven.
+                    Een nadeel is dat een bitmap minder scherp kan worden wanneer
+                    je hem heel groot maakt.
+                </p>
+
+                <p>
+                    Voorbeelden zijn <strong>JPG, PNG en GIF</strong>.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Vector</h3>
+
+                <p>
+                    Een vectorafbeelding bestaat niet uit losse pixels.
+                    De afbeelding wordt opgebouwd uit lijnen, vormen en wiskundige
+                    beschrijvingen.
+                </p>
+
+                <p>
+                    Daardoor kun je een vectorafbeelding heel groot maken
+                    zonder dat de afbeelding onscherp wordt.
+                </p>
+
+                <p>
+                    Een bekend vectorformaat is <strong>SVG</strong>.
+                </p>
+
+            </div>
+
+
+            <table>
+
+                <tr>
+                    <th>Bitmap</th>
+                    <th>Vector</th>
+                </tr>
+
+                <tr>
+                    <td>Bestaat uit pixels</td>
+                    <td>Bestaat uit vormen en lijnen</td>
+                </tr>
+
+                <tr>
+                    <td>Goed voor foto's</td>
+                    <td>Goed voor logo's en tekeningen</td>
+                </tr>
+
+                <tr>
+                    <td>Kan onscherp worden bij vergroten</td>
+                    <td>Blijft scherp bij vergroten</td>
+                </tr>
+
+                <tr>
+                    <td>JPG / PNG / GIF</td>
+                    <td>SVG</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         AI
+    ========================= -->
+
+    <section id="ai">
+
+        <div class="container">
+
+            <h2>AI</h2>
+
+            <div class="card ai-highlight">
+
+                <h3>Wat is AI?</h3>
+
+                <p>
+                    AI staat voor Artificial Intelligence, oftewel kunstmatige
+                    intelligentie. AI is technologie waarmee computers taken kunnen
+                    uitvoeren waarvoor normaal gesproken menselijke intelligentie
+                    nodig is.
+                </p>
+
+                <p>
+                    Voorbeelden hiervan zijn teksten begrijpen, afbeeldingen maken,
+                    patronen herkennen en vragen beantwoorden.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>AI in het dagelijks leven</h3>
+
+                <p>
+                    Kunstmatige intelligentie wordt tegenwoordig op veel plekken
+                    gebruikt. Denk bijvoorbeeld aan aanbevelingen op YouTube,
+                    automatische vertalingen, spraakassistenten en systemen die
+                    foto's herkennen.
+                </p>
+
+                <p>
+                    Ook smartphones gebruiken AI voor bijvoorbeeld foto's,
+                    spraakherkenning en persoonlijke aanbevelingen.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MIJN GEBRUIK VAN AI
+    ========================= -->
+
+    <section id="mijn-ai">
+
+        <div class="container">
+
+            <h2>Waar gebruik ik AI voor en leer ik er iets van?</h2>
+
+            <div class="card">
+
+                <p>
+                    Ik gebruik AI vooral om uitleg te krijgen over onderwerpen
+                    die ik lastig vind. Ik kan bijvoorbeeld een vraag stellen
+                    wanneer ik iets uit een schoolvak niet helemaal begrijp.
+                </p>
+
+                <p>
+                    Ook kan AI helpen om ideeën te bedenken of om mijn eigen tekst
+                    te verbeteren. Ik probeer de antwoorden wel zelf te begrijpen
+                    en controleer belangrijke informatie.
+                </p>
+
+                <p>
+                    Ik leer er dus vooral iets van wanneer ik AI gebruik als een
+                    hulpmiddel om iets uit te leggen. Wanneer ik alleen een
+                    antwoord overneem zonder het te begrijpen, leer ik er veel minder
+                    van.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         AI OP MOBIELE TELEFOON
+    ========================= -->
+
+    <section id="mobiel">
+
+        <div class="container">
+
+            <h2>Mijn mobiele telefoon en AI</h2>
+
+            <div class="card">
+
+                <h3>Mijn telefoon</h3>
+
+                <p>
+                    Ik heb een <strong>Iphone 13 Mini</strong>.
+                </p>
+
+                <p>
+                    Op moderne smartphones wordt AI op verschillende manieren
+                    gebruikt. Denk bijvoorbeeld aan camerafuncties die automatisch
+                    scènes herkennen, stemherkenning, tekstvoorspellingen en
+                    functies die foto's automatisch verbeteren.
+                </p>
+
+                <p>
+                    Welke AI-functies beschikbaar zijn, verschilt per merk,
+                    model en softwareversie.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Voorbeeld van AI op een smartphone</h3>
+
+                <p>
+                    Een camera kan bijvoorbeeld herkennen of je een persoon,
+                    dier, landschap of nachtelijke scène fotografeert.
+                    De software kan vervolgens automatisch instellingen aanpassen
+                    om de foto te verbeteren.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         AI ARTIKEL
+    ========================= -->
+
+    <section id="artikel">
+
+        <div class="container">
+
+            <h2>AI-artikel</h2>
+
+            <div class="card ai-highlight">
+
+                <h3>
+                    Artificial intelligence in higher education:
+                    student use, perceived benefits, and emerging risks
+                </h3>
+
+                <p>
+                    Het artikel is gepubliceerd in
+                    <strong>Frontiers in Education</strong> op
+                    <strong>25 juni 2026</strong>.
+                </p>
+
+
+                <h3>Samenvatting</h3>
+
+                <p>
+                    In het artikel wordt onderzocht hoe studenten AI gebruiken
+                    tijdens hun opleiding en hoe zij de voordelen en nadelen ervan
+                    ervaren. De onderzoekers onderzochten 467 studenten.
+                </p>
+
+                <p>
+                    Uit het onderzoek bleek dat AI door veel studenten regelmatig
+                    wordt gebruikt voor bijvoorbeeld studeren, onderzoek doen en
+                    teksten schrijven. Veel studenten vinden AI handig omdat het
+                    tijd kan besparen en kan helpen bij het begrijpen van lesstof.
+                </p>
+
+                <p>
+                    Tegelijkertijd maken studenten zich zorgen over te veel
+                    afhankelijkheid van AI en minder zelfstandig nadenken.
+                    Ook bleek dat veel studenten niet precies weten welke vormen
+                    van AI-gebruik op hun opleiding zijn toegestaan.
+                </p>
+
+
+                <h3>Mijn mening</h3>
+
+                <p>
+                    Ik vind dat AI handig kan zijn voor school, zolang je het
+                    gebruikt als hulpmiddel en niet alles door AI laat doen.
+                    Je moet zelf blijven nadenken en controleren of de informatie
+                    klopt.
+                </p>
+
+                <p>
+                    Ik herken ook het punt uit het artikel dat AI ervoor kan zorgen
+                    dat je minder zelfstandig nadenkt wanneer je het voor iedere
+                    opdracht gebruikt. Daarom vind ik dat je vooral AI moet gebruiken
+                    om iets te begrijpen en te leren.
+                </p>
+
+
+                <p class="source">
+                    Bron:
+                    <a
+                        href="https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1812390/full"
+                        target="_blank">
+                        Frontiers in Education – Artificial intelligence in higher education
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
 
         <p>
-            Kleurmodellen worden gebruikt om kleuren digitaal weer te geven.
-            Er bestaan verschillende modellen voor verschillende toepassingen.
+            BTD6 Informatica Website © 2026
         </p>
 
-
-        <div class="color-grid">
-
-            <div class="card rgb">
-
-                <h3>RGB</h3>
-
-                <p>
-                    RGB staat voor Red, Green en Blue.
-                    Dit model wordt vooral gebruikt voor schermen,
-                    zoals computers, telefoons en televisies.
-                </p>
-
-                <p>
-                    Door rood, groen en blauw in verschillende sterktes
-                    te combineren kunnen heel veel kleuren worden gemaakt.
-                </p>
-
-            </div>
-
-
-            <div class="card cmyk">
-
-                <h3>CMYK</h3>
-
-                <p>
-                    CMYK staat voor Cyan, Magenta, Yellow en Key/Black.
-                    Dit kleurmodel wordt vooral gebruikt bij printers.
-                </p>
-
-                <p>
-                    De kleuren worden gemengd met inkt in plaats van met licht.
-                </p>
-
-            </div>
-
-
-            <div class="card hex">
-
-                <h3>HEX</h3>
-
-                <p>
-                    HEX-codes worden veel gebruikt op websites.
-                    Een kleur wordt weergegeven met zes tekens.
-                </p>
-
-                <p>
-                    Bijvoorbeeld:
-                    <strong>#FF0000</strong> betekent rood.
-                </p>
-
-            </div>
-
-
-            <div class="card hsv">
-
-                <h3>HSV</h3>
-
-                <p>
-                    HSV betekent Hue, Saturation en Value.
-                    Hiermee kun je kleuren beschrijven op basis van
-                    kleur, verzadiging en helderheid.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     COMPRESSIE
-========================= -->
-
-<section id="compressie">
-
-    <div class="container">
-
-        <h2>Compressie: Bitmap / Vector</h2>
-
-
-        <div class="card">
-
-            <h3>Bitmap</h3>
-
-            <p>
-                Een bitmapafbeelding bestaat uit heel veel kleine pixels.
-                Elke pixel heeft informatie over bijvoorbeeld de kleur.
-            </p>
-
-            <p>
-                Een voordeel is dat foto's er goed mee kunnen worden weergegeven.
-                Een nadeel is dat een bitmap minder scherp kan worden wanneer
-                je hem heel groot maakt.
-            </p>
-
-            <p>
-                Voorbeelden zijn <strong>JPG, PNG en GIF</strong>.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>Vector</h3>
-
-            <p>
-                Een vectorafbeelding bestaat niet uit losse pixels.
-                De afbeelding wordt opgebouwd uit lijnen, vormen en wiskundige
-                beschrijvingen.
-            </p>
-
-            <p>
-                Daardoor kun je een vectorafbeelding heel groot maken
-                zonder dat de afbeelding onscherp wordt.
-            </p>
-
-            <p>
-                Een bekend vectorformaat is <strong>SVG</strong>.
-            </p>
-
-        </div>
-
-
-        <table>
-
-            <tr>
-                <th>Bitmap</th>
-                <th>Vector</th>
-            </tr>
-
-            <tr>
-                <td>Bestaat uit pixels</td>
-                <td>Bestaat uit vormen en lijnen</td>
-            </tr>
-
-            <tr>
-                <td>Goed voor foto's</td>
-                <td>Goed voor logo's en tekeningen</td>
-            </tr>
-
-            <tr>
-                <td>Kan onscherp worden bij vergroten</td>
-                <td>Blijft scherp bij vergroten</td>
-            </tr>
-
-            <tr>
-                <td>JPG / PNG / GIF</td>
-                <td>SVG</td>
-            </tr>
-
-        </table>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     AI
-========================= -->
-
-<section id="ai">
-
-    <div class="container">
-
-        <h2>AI</h2>
-
-
-        <div class="card ai-highlight">
-
-            <h3>Wat is AI?</h3>
-
-            <p>
-                AI staat voor Artificial Intelligence, oftewel kunstmatige
-                intelligentie. AI is technologie waarmee computers taken kunnen
-                uitvoeren waarvoor normaal gesproken menselijke intelligentie
-                nodig is.
-            </p>
-
-            <p>
-                Voorbeelden hiervan zijn teksten begrijpen, afbeeldingen maken,
-                patronen herkennen en vragen beantwoorden.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>AI in het dagelijks leven</h3>
-
-            <p>
-                Kunstmatige intelligentie wordt tegenwoordig op veel plekken
-                gebruikt. Denk bijvoorbeeld aan aanbevelingen op YouTube,
-                automatische vertalingen, spraakassistenten en systemen die
-                foto's herkennen.
-            </p>
-
-            <p>
-                Ook smartphones gebruiken AI voor bijvoorbeeld foto's,
-                spraakherkenning en persoonlijke aanbevelingen.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     MIJN GEBRUIK VAN AI
-========================= -->
-
-<section id="mijn-ai">
-
-    <div class="container">
-
-        <h2>Waar gebruik ik AI voor en leer ik er iets van?</h2>
-
-
-        <div class="card">
-
-            <p>
-                Ik gebruik AI vooral om uitleg te krijgen over onderwerpen
-                die ik lastig vind. Ik kan bijvoorbeeld een vraag stellen
-                wanneer ik iets uit een schoolvak niet helemaal begrijp.
-            </p>
-
-            <p>
-                Ook kan AI helpen om ideeën te bedenken of om mijn eigen tekst
-                te verbeteren. Ik probeer de antwoorden wel zelf te begrijpen
-                en controleer belangrijke informatie.
-            </p>
-
-            <p>
-                Ik leer er dus vooral iets van wanneer ik AI gebruik als een
-                soort hulpmiddel om iets uit te leggen. Wanneer ik alleen een
-                antwoord overneem zonder het te begrijpen, leer ik er veel minder
-                van.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     AI OP MIJN TELEFOON
-========================= -->
-
-<section id="mobiel">
-
-    <div class="container">
-
-        <h2>Mijn mobiele telefoon en AI</h2>
-
-
-        <div class="card">
-
-            <h3>Mijn telefoon</h3>
-
-            <p>
-                Ik heb een <strong>Iphone 13 mini</strong>.
-            </p>
-
-            <p>
-                Op moderne smartphones wordt AI op verschillende manieren
-                gebruikt. Denk bijvoorbeeld aan camerafuncties die automatisch
-                scènes herkennen, stemherkenning, tekstvoorspellingen en
-                functies die foto's automatisch verbeteren.
-            </p>
-
-            <p>
-                Welke AI-functies beschikbaar zijn, verschilt per merk,
-                model en softwareversie.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>Voorbeeld van AI op een smartphone</h3>
-
-            <p>
-                Een camera kan bijvoorbeeld herkennen of je een persoon,
-                dier, landschap of nachtelijke scène fotografeert. De software
-                kan vervolgens automatisch instellingen aanpassen om de foto
-                te verbeteren.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     AI ARTIKEL
-========================= -->
-
-<section id="artikel">
-
-    <div class="container">
-
-        <h2>AI-artikel</h2>
-
-
-        <div class="card ai-highlight">
-
-            <h3>
-                Artificial intelligence in higher education:
-                student use, perceived benefits, and emerging risks
-            </h3>
-
-            <p>
-                Het artikel is gepubliceerd in
-                <strong>Frontiers in Education</strong> op
-                <strong>25 juni 2026</strong>.
-            </p>
-
-
-            <h3>Samenvatting</h3>
-
-            <p>
-                In het artikel wordt onderzocht hoe studenten AI gebruiken
-                tijdens hun opleiding en hoe zij de voordelen en nadelen ervan
-                ervaren. De onderzoekers onderzochten 467 studenten.
-            </p>
-
-            <p>
-                Uit het onderzoek bleek dat AI door veel studenten regelmatig
-                wordt gebruikt voor bijvoorbeeld studeren, onderzoek doen en
-                teksten schrijven. Veel studenten vinden AI handig omdat het
-                tijd kan besparen en kan helpen bij het begrijpen van lesstof.
-            </p>
-
-            <p>
-                Tegelijkertijd maken studenten zich zorgen over te veel
-                afhankelijkheid van AI en minder zelfstandig nadenken.
-                Ook bleek dat veel studenten niet precies weten welke vormen
-                van AI-gebruik op hun opleiding zijn toegestaan.
-            </p>
-
-
-            <h3>Mijn mening</h3>
-
-            <p>
-                Ik vind dat AI handig kan zijn voor school, zolang je het
-                gebruikt als hulpmiddel en niet alles door AI laat doen.
-                Je moet zelf blijven nadenken en controleren of de informatie
-                klopt.
-            </p>
-
-            <p>
-                Ik herken ook het punt uit het artikel dat AI ervoor kan zorgen
-                dat je minder zelfstandig nadenkt wanneer je het voor iedere
-                opdracht gebruikt. Daarom vind ik dat je vooral AI moet gebruiken
-                om iets te begrijpen en te leren.
-            </p>
-
-
-            <p class="source">
-                Bron:
-                <a
-                    href="https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1812390/full"
-                    target="_blank">
-                    Frontiers in Education – Artificial intelligence in higher education
-                </a>
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-    <p>
-        BTD6 Informatica Website © 2026
-    </p>
-
-    <p>
-        Gemaakt met HTML en CSS
-    </p>
-
-</footer>
+        <p>
+            Gemaakt met HTML en CSS
+        </p>
+
+    </footer>
 
 </body>
 </html>
+```
