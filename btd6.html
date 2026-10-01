@@ -1,11 +1,20 @@
+```html
 <!DOCTYPE html>
 <html lang="nl">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Over BTD6</title>
+
+    <title>Over BTD6 - BTD6 Informatica</title>
+
 
     <style>
+
+        /* =====================================================
+           BASIS
+        ===================================================== */
+
         * {
             margin: 0;
             padding: 0;
@@ -13,233 +22,605 @@
             scroll-behavior: smooth;
         }
 
+
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #101820;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #071a2b,
+                    #0e2a3d,
+                    #071a2b
+                );
+
             color: white;
+
             line-height: 1.6;
         }
 
-        /* =========================
+
+        /* =====================================================
            NAVIGATIE
-        ========================= */
+        ===================================================== */
 
         nav {
             position: fixed;
+
             top: 0;
             right: 0;
+
             width: 100%;
-            background: rgba(10, 15, 20, 0.95);
+
+            background: rgba(5, 15, 25, 0.95);
+
             z-index: 1000;
+
             padding: 15px 35px;
+
             display: flex;
+
             justify-content: flex-end;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+
+            box-shadow:
+                0 3px 15px rgba(0, 0, 0, 0.4);
         }
+
 
         .dropdown {
             position: relative;
+
             display: inline-block;
         }
 
+
         .dropbtn {
-            background: #f2a900;
+            background: #ffd23f;
+
             color: #111;
+
             padding: 12px 20px;
+
             font-size: 16px;
+
             font-weight: bold;
+
             border: none;
-            border-radius: 8px;
+
+            border-radius: 12px;
+
             cursor: pointer;
-        }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            right: 0;
-            background: #202a33;
-            min-width: 280px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-        }
+            box-shadow:
+                0 4px 0 #c99d00;
 
-        .dropdown-content a {
-            color: white;
-            padding: 13px 17px;
-            text-decoration: none;
-            display: block;
             transition: 0.2s;
         }
 
-        .dropdown-content a:hover {
-            background: #f2a900;
-            color: #111;
+
+        .dropbtn:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 6px 0 #c99d00;
         }
+
+
+        .dropdown-content {
+            display: none;
+
+            position: absolute;
+
+            right: 0;
+
+            background: #132f3f;
+
+            min-width: 290px;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+
+        .dropdown-content a {
+            color: white;
+
+            padding: 14px 18px;
+
+            text-decoration: none;
+
+            display: block;
+
+            transition: 0.2s;
+        }
+
+
+        .dropdown-content a:hover {
+            background: #ffd23f;
+
+            color: #111;
+
+            padding-left: 24px;
+        }
+
 
         .dropdown:hover .dropdown-content {
             display: block;
         }
 
-        /* =========================
+
+        /* =====================================================
            HERO
-        ========================= */
+        ===================================================== */
 
         .hero {
             min-height: 100vh;
+
             position: relative;
+
             background-image:
                 linear-gradient(
-                    rgba(0, 0, 0, 0.4),
-                    rgba(0, 0, 0, 0.75)
+                    rgba(0, 20, 35, 0.3),
+                    rgba(0, 10, 20, 0.78)
                 ),
                 url("./images%20%284%29.jpeg");
+
             background-size: cover;
+
             background-position: center;
+
             display: flex;
-            justify-content: center;
+
             align-items: center;
+
+            justify-content: center;
+
             text-align: center;
-            padding: 30px;
+
+            padding: 40px 20px;
         }
+
 
         .hero-content {
-            max-width: 900px;
+            max-width: 950px;
+
+            padding-top: 50px;
         }
 
-        .hero h1 {
-            font-size: 75px;
-            text-shadow: 5px 5px 0 #000;
-            color: #f2a900;
-            margin-bottom: 15px;
+
+        .hero-badge {
+            display: inline-block;
+
+            background: #ffd23f;
+
+            color: #111;
+
+            font-weight: bold;
+
+            padding: 9px 18px;
+
+            border-radius: 50px;
+
+            margin-bottom: 20px;
+
+            box-shadow:
+                0 5px 0 #c99d00;
         }
+
+
+        .hero h1 {
+            font-size: 78px;
+
+            color: #ffd23f;
+
+            text-shadow:
+                5px 5px 0 #111,
+                0 0 20px rgba(255, 210, 63, 0.45);
+
+            margin-bottom: 18px;
+        }
+
 
         .hero p {
             font-size: 23px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px 30px;
-            border-radius: 12px;
+
+            background: rgba(0, 0, 0, 0.68);
+
+            padding: 22px 30px;
+
+            border-radius: 18px;
+
+            border: 2px solid rgba(255, 210, 63, 0.6);
+
+            max-width: 900px;
         }
 
-        /* =========================
-           INHOUD
-        ========================= */
+
+        /* =====================================================
+           BUTTON
+        ===================================================== */
+
+        .button {
+            display: inline-block;
+
+            margin-top: 25px;
+
+            padding: 14px 28px;
+
+            background: #ffd23f;
+
+            color: #111;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 5px 0 #c99d00;
+
+            transition: 0.2s;
+        }
+
+
+        .button:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 8px 0 #c99d00;
+        }
+
+
+        /* =====================================================
+           SECTIES
+        ===================================================== */
 
         section {
             padding: 90px 10%;
         }
 
+
         section:nth-child(even) {
-            background: #16222d;
+            background:
+                linear-gradient(
+                    135deg,
+                    #0d2c40,
+                    #123c50
+                );
         }
 
+
         section:nth-child(odd) {
-            background: #101820;
+            background:
+                linear-gradient(
+                    135deg,
+                    #081e31,
+                    #0c2940
+                );
         }
+
 
         .container {
             max-width: 1100px;
+
             margin: auto;
         }
 
+
+        /* =====================================================
+           KOPPEN
+        ===================================================== */
+
         h2 {
-            font-size: 42px;
-            color: #f2a900;
-            margin-bottom: 25px;
+            font-size: 45px;
+
+            color: #ffd23f;
+
+            margin-bottom: 28px;
+
+            text-align: center;
+
+            text-shadow:
+                3px 3px 0 #06111b;
         }
+
 
         h3 {
-            color: #ffc533;
+            color: #ffd23f;
+
             margin-bottom: 12px;
+
+            font-size: 23px;
         }
+
+
+        .section-intro {
+            text-align: center;
+
+            max-width: 800px;
+
+            margin: 0 auto 35px;
+
+            font-size: 18px;
+
+            color: #d8ebf2;
+        }
+
+
+        /* =====================================================
+           KAARTEN
+        ===================================================== */
 
         .card {
-            background: #202d38;
+            background:
+                linear-gradient(
+                    145deg,
+                    #17394b,
+                    #1c4355
+                );
+
             padding: 28px;
+
             margin: 20px 0;
-            border-radius: 14px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+
+            border-radius: 18px;
+
+            border: 2px solid rgba(255,255,255,0.08);
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.25);
+
+            transition: 0.25s;
         }
 
-        /* =========================
+
+        .card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 15px 30px rgba(0, 0, 0, 0.35);
+
+            border-color: rgba(255, 210, 63, 0.5);
+        }
+
+
+        /* =====================================================
            GRID
-        ========================= */
+        ===================================================== */
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 25px;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 22px;
+
+            margin-top: 30px;
         }
+
 
         .grid .card {
             margin: 0;
         }
 
+
+        /* =====================================================
+           NUMMERS
+        ===================================================== */
+
         .number {
-            font-size: 35px;
-            color: #f2a900;
-            font-weight: bold;
-        }
+            width: 55px;
 
-        /* =========================
-           TABEL
-        ========================= */
+            height: 55px;
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 25px;
-            background: #202d38;
-        }
+            display: flex;
 
-        th,
-        td {
-            padding: 15px;
-            border: 1px solid #40515f;
-            text-align: left;
-        }
+            align-items: center;
 
-        th {
-            background: #f2a900;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #ffd23f;
+
             color: #111;
+
+            font-size: 23px;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+
+            box-shadow:
+                0 4px 0 #c99d00;
         }
 
-        /* =========================
-           BUTTON
-        ========================= */
 
-        .button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 13px 24px;
-            background: #f2a900;
-            color: #111;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
+        /* =====================================================
+           MONKEY KAARTEN
+        ===================================================== */
+
+        .monkey-card {
+            text-align: center;
+        }
+
+
+        .monkey-icon {
+            font-size: 55px;
+
+            margin-bottom: 12px;
+
+            display: block;
+        }
+
+
+        .monkey-card:hover .monkey-icon {
+            transform: scale(1.15) rotate(-4deg);
+
             transition: 0.2s;
         }
 
-        .button:hover {
-            transform: scale(1.05);
-            background: #ffc533;
+
+        /* =====================================================
+           LEUKE BADGES
+        ===================================================== */
+
+        .badge-row {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 25px;
         }
 
-        /* =========================
+
+        .badge {
+            background: #0b7189;
+
+            padding: 9px 16px;
+
+            border-radius: 50px;
+
+            font-weight: bold;
+
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+
+
+        .badge.yellow {
+            background: #ffd23f;
+
+            color: #111;
+        }
+
+
+        .badge.green {
+            background: #51b848;
+        }
+
+
+        .badge.blue {
+            background: #2c8dcc;
+        }
+
+
+        /* =====================================================
+           TABEL
+        ===================================================== */
+
+        table {
+            width: 100%;
+
+            border-collapse: separate;
+
+            border-spacing: 0;
+
+            overflow: hidden;
+
+            margin-top: 30px;
+
+            background: #17394b;
+
+            border-radius: 15px;
+        }
+
+
+        th,
+        td {
+            padding: 16px;
+
+            border-bottom: 1px solid #355869;
+
+            text-align: left;
+        }
+
+
+        th {
+            background: #ffd23f;
+
+            color: #111;
+        }
+
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+
+        tr:hover td {
+            background: rgba(255,255,255,0.04);
+        }
+
+
+        /* =====================================================
+           HIGHLIGHT
+        ===================================================== */
+
+        .highlight {
+            border-left:
+                7px solid #ffd23f;
+        }
+
+
+        .fun-box {
+            background:
+                linear-gradient(
+                    135deg,
+                    #123c50,
+                    #195672
+                );
+
+            border:
+                2px dashed #ffd23f;
+
+            padding: 25px;
+
+            border-radius: 18px;
+
+            margin-top: 25px;
+
+            text-align: center;
+        }
+
+
+        .fun-box h3 {
+            font-size: 28px;
+        }
+
+
+        /* =====================================================
            FOOTER
-        ========================= */
+        ===================================================== */
 
         footer {
             text-align: center;
-            padding: 30px;
-            background: #080d11;
-            color: #aaa;
+
+            padding: 35px;
+
+            background: #04101a;
+
+            color: #a8bcc6;
         }
 
-        /* =========================
+
+        footer strong {
+            color: #ffd23f;
+        }
+
+
+        /* =====================================================
            MOBIEL
-        ========================= */
+        ===================================================== */
 
         @media (max-width: 800px) {
 
@@ -247,30 +628,49 @@
                 font-size: 50px;
             }
 
+
             .hero p {
                 font-size: 18px;
             }
+
 
             .grid {
                 grid-template-columns: 1fr;
             }
 
+
             section {
                 padding: 70px 6%;
             }
 
+
             nav {
                 padding: 12px 15px;
             }
+
+
+            .dropdown-content {
+                min-width: 250px;
+            }
+
+
+            h2 {
+                font-size: 34px;
+            }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- =========================
+
+    <!-- =====================================================
          NAVIGATIE
-    ========================= -->
+    ===================================================== -->
 
     <nav>
 
@@ -280,42 +680,43 @@
                 ☰ Menu
             </button>
 
+
             <div class="dropdown-content">
 
                 <a href="index.html">
-                    Home
+                    🏠 Home
                 </a>
 
                 <a href="btd6.html">
-                    Over BTD6
+                    🐒 Over BTD6
                 </a>
 
                 <a href="binairstelsel.html">
-                    Binair stelsel
+                    💻 Binair stelsel
                 </a>
 
                 <a href="index.html#kleurmodellen">
-                    Kleurmodellen
+                    🎨 Kleurmodellen
                 </a>
 
                 <a href="index.html#compressie">
-                    Compressie: Bitmap / Vector
+                    🖼️ Compressie: Bitmap / Vector
                 </a>
 
                 <a href="index.html#ai">
-                    AI
+                    🤖 AI
                 </a>
 
                 <a href="index.html#mijn-ai">
-                    Waar gebruik ik AI voor?
+                    🧠 Waar gebruik ik AI voor?
                 </a>
 
                 <a href="index.html#mobiel">
-                    AI in mijn mobiele telefoon
+                    📱 AI in mijn mobiele telefoon
                 </a>
 
                 <a href="index.html#artikel">
-                    AI-artikel
+                    📰 AI-artikel
                 </a>
 
             </div>
@@ -325,25 +726,36 @@
     </nav>
 
 
-    <!-- =========================
+
+    <!-- =====================================================
          HERO
-    ========================= -->
+    ===================================================== -->
 
     <section class="hero">
 
         <div class="hero-content">
 
-            <h1>Bloons TD 6</h1>
+            <div class="hero-badge">
+                🎈 WELCOME TO THE BLOONS!
+            </div>
+
+
+            <h1>
+                Bloons TD 6
+            </h1>
+
 
             <p>
-                Bloons TD 6, ook wel BTD6 genoemd, is een tower defense-game
-                waarin je apen gebruikt om golven van ballonnen tegen te houden.
-                Bouw je verdediging, upgrade je towers en probeer alle rondes
-                te overleven.
+                Bloons TD 6 is een kleurrijke tower defense-game
+                waarin je apen gebruikt om golven van Bloons tegen
+                te houden. Bouw je verdediging, verdien geld,
+                upgrade je towers en probeer zo lang mogelijk
+                te overleven!
             </p>
 
+
             <a href="#wat-is-btd6" class="button">
-                Ontdek BTD6
+                🎈 Ontdek BTD6
             </a>
 
         </div>
@@ -351,36 +763,69 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- =====================================================
          WAT IS BTD6?
-    ========================= -->
+    ===================================================== -->
 
     <section id="wat-is-btd6">
 
         <div class="container">
 
-            <h2>Wat is BTD6?</h2>
+            <h2>
+                🐒 Wat is BTD6?
+            </h2>
 
-            <div class="card">
 
-                <p>
-                    Bloons TD 6 is een tower defense-game van Ninja Kiwi.
-                    In het spel proberen verschillende soorten Bloons
-                    het einde van een baan te bereiken.
-                </p>
+            <p class="section-intro">
+                Tijd om de wereld van apen, Bloons en towers
+                te ontdekken!
+            </p>
 
-                <p>
-                    Jij moet towers plaatsen langs de baan om de Bloons
-                    te laten knappen voordat ze het einde bereiken.
-                    Elke tower heeft zijn eigen aanvallen, eigenschappen
-                    en upgrades.
-                </p>
+
+            <div class="card highlight">
 
                 <p>
-                    Naarmate de rondes moeilijker worden, komen er sterkere
-                    Bloons. Daarom moet je goed nadenken over waar je je
-                    towers neerzet en welke upgrades je kiest.
+                    Bloons TD 6 is een tower defense-game van
+                    Ninja Kiwi. In het spel proberen verschillende
+                    soorten Bloons het einde van een baan te bereiken.
                 </p>
+
+
+                <p>
+                    Jij moet Monkey Towers langs de baan plaatsen.
+                    Deze towers vallen de Bloons aan voordat ze
+                    het einde bereiken.
+                </p>
+
+
+                <p>
+                    Tijdens het spel krijg je geld waarmee je nieuwe
+                    towers kunt plaatsen en bestaande towers kunt
+                    upgraden. Naarmate de rondes verder gaan,
+                    verschijnen er steeds sterkere Bloons.
+                </p>
+
+            </div>
+
+
+            <div class="badge-row">
+
+                <div class="badge yellow">
+                    🎈 Bloons
+                </div>
+
+                <div class="badge green">
+                    🐒 Monkeys
+                </div>
+
+                <div class="badge blue">
+                    💰 Geld
+                </div>
+
+                <div class="badge">
+                    ⚔️ Strategie
+                </div>
 
             </div>
 
@@ -389,66 +834,102 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- =====================================================
          HOE WERKT HET?
-    ========================= -->
+    ===================================================== -->
 
     <section>
 
         <div class="container">
 
-            <h2>Hoe werkt het spel?</h2>
+            <h2>
+                🎮 Hoe werkt het spel?
+            </h2>
+
+
+            <p class="section-intro">
+                Vier belangrijke stappen om de Bloons tegen te houden.
+            </p>
+
 
             <div class="grid">
 
-                <div class="card">
-                    <div class="number">01</div>
 
-                    <h3>Towers plaatsen</h3>
+                <div class="card">
+
+                    <div class="number">
+                        1
+                    </div>
+
+                    <h3>
+                        🐒 Towers plaatsen
+                    </h3>
 
                     <p>
-                        Je kiest een Monkey Tower en plaatst deze op de map.
-                        Elke tower heeft een eigen bereik en aanvalstype.
+                        Kies een Monkey Tower en plaats hem op de map.
+                        Iedere tower heeft zijn eigen eigenschappen,
+                        bereik en aanvallen.
                     </p>
+
                 </div>
 
 
                 <div class="card">
-                    <div class="number">02</div>
 
-                    <h3>Bloons poppen</h3>
+                    <div class="number">
+                        2
+                    </div>
+
+                    <h3>
+                        🎈 Bloons poppen
+                    </h3>
 
                     <p>
-                        De towers vallen de Bloons automatisch aan.
-                        Het doel is om zoveel mogelijk Bloons te laten
-                        knappen voordat ze ontsnappen.
+                        De towers vallen automatisch de Bloons aan.
+                        Het doel is om zoveel mogelijk Bloons te
+                        laten knappen voordat ze ontsnappen.
                     </p>
+
                 </div>
 
 
                 <div class="card">
-                    <div class="number">03</div>
 
-                    <h3>Geld verdienen</h3>
+                    <div class="number">
+                        3
+                    </div>
+
+                    <h3>
+                        💰 Geld verdienen
+                    </h3>
 
                     <p>
                         Tijdens het spel verdien je geld.
-                        Dat geld kun je gebruiken om nieuwe towers te
-                        plaatsen en bestaande towers te upgraden.
+                        Hiermee kun je nieuwe towers plaatsen
+                        en upgrades kopen.
                     </p>
+
                 </div>
 
 
                 <div class="card">
-                    <div class="number">04</div>
 
-                    <h3>Steeds moeilijker</h3>
+                    <div class="number">
+                        4
+                    </div>
+
+                    <h3>
+                        🔥 Steeds moeilijker
+                    </h3>
 
                     <p>
                         De rondes worden steeds moeilijker.
-                        Daardoor moet je je verdediging blijven aanpassen.
+                        Daarom moet je je strategie steeds aanpassen.
                     </p>
+
                 </div>
+
 
             </div>
 
@@ -457,69 +938,99 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- =====================================================
          MONKEY TOWERS
-    ========================= -->
+    ===================================================== -->
 
     <section>
 
         <div class="container">
 
-            <h2>Monkey Towers</h2>
+            <h2>
+                🐒 Monkey Towers
+            </h2>
 
-            <p>
-                In BTD6 zijn er veel verschillende soorten towers.
-                Iedere tower is geschikt voor andere situaties.
+
+            <p class="section-intro">
+                Iedere monkey heeft zijn eigen specialiteit.
+                Welke zou jij gebruiken?
             </p>
+
 
             <div class="grid">
 
-                <div class="card">
 
-                    <h3>🗡️ Dart Monkey</h3>
+                <div class="card monkey-card">
+
+                    <span class="monkey-icon">
+                        🏹
+                    </span>
+
+                    <h3>
+                        Dart Monkey
+                    </h3>
 
                     <p>
-                        Een eenvoudige tower die scherpe darts naar Bloons
-                        gooit. Dit is een van de basis-towers.
+                        Een eenvoudige tower die scherpe darts
+                        naar Bloons gooit.
                     </p>
 
                 </div>
 
 
-                <div class="card">
+                <div class="card monkey-card">
 
-                    <h3>💥 Bomb Shooter</h3>
+                    <span class="monkey-icon">
+                        💣
+                    </span>
+
+                    <h3>
+                        Bomb Shooter
+                    </h3>
 
                     <p>
-                        Schiet bommen die kunnen exploderen en meerdere
-                        Bloons tegelijk raken.
+                        Schiet bommen die exploderen en meerdere
+                        Bloons tegelijk kunnen raken.
                     </p>
 
                 </div>
 
 
-                <div class="card">
+                <div class="card monkey-card">
 
-                    <h3>🔫 Sniper Monkey</h3>
+                    <span class="monkey-icon">
+                        🎯
+                    </span>
+
+                    <h3>
+                        Sniper Monkey
+                    </h3>
 
                     <p>
-                        Kan van grote afstand Bloons aanvallen.
-                        Hierdoor kan hij op sommige maps erg nuttig zijn.
+                        Kan vanaf grote afstand Bloons aanvallen.
                     </p>
 
                 </div>
 
 
-                <div class="card">
+                <div class="card monkey-card">
 
-                    <h3>🧙 Wizard Monkey</h3>
+                    <span class="monkey-icon">
+                        🧙
+                    </span>
+
+                    <h3>
+                        Wizard Monkey
+                    </h3>
 
                     <p>
-                        Gebruikt magische aanvallen en kan verschillende
-                        soorten ondersteuning en schade leveren.
+                        Gebruikt magische aanvallen en heeft
+                        verschillende speciale mogelijkheden.
                     </p>
 
                 </div>
+
 
             </div>
 
@@ -528,27 +1039,48 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- =====================================================
          HEROES
-    ========================= -->
+    ===================================================== -->
 
     <section>
 
         <div class="container">
 
-            <h2>Heroes</h2>
+            <h2>
+                🦸 Heroes
+            </h2>
 
-            <div class="card">
+
+            <div class="card highlight">
 
                 <p>
-                    Naast Monkey Towers kun je in BTD6 ook een Hero gebruiken.
-                    Heroes hebben hun eigen vaardigheden en worden sterker
-                    naarmate ze levels krijgen.
+                    Naast Monkey Towers kun je in BTD6 ook een
+                    Hero gebruiken. Heroes hebben hun eigen
+                    vaardigheden en worden sterker terwijl ze
+                    levels krijgen.
                 </p>
 
+
                 <p>
-                    Een Hero kan daardoor een belangrijk onderdeel van je
-                    strategie zijn.
+                    Hierdoor kan een Hero een belangrijk onderdeel
+                    van je strategie worden.
+                </p>
+
+            </div>
+
+
+            <div class="fun-box">
+
+                <h3>
+                    🦸 Eén held kan het verschil maken!
+                </h3>
+
+                <p>
+                    Kies een Hero die past bij jouw speelstijl
+                    en probeer de perfecte combinatie met je towers
+                    te vinden.
                 </p>
 
             </div>
@@ -558,27 +1090,32 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- =====================================================
          UPGRADES
-    ========================= -->
+    ===================================================== -->
 
     <section>
 
         <div class="container">
 
-            <h2>Upgrades</h2>
+            <h2>
+                ⬆️ Upgrades
+            </h2>
+
+
+            <p class="section-intro">
+                Sterkere towers betekenen sterkere verdediging.
+            </p>
+
 
             <div class="card">
 
                 <p>
                     Towers kunnen worden geüpgraded om sterker te worden.
                     Upgrades kunnen bijvoorbeeld zorgen voor meer schade,
-                    een groter bereik, snellere aanvallen of nieuwe mogelijkheden.
-                </p>
-
-                <p>
-                    De keuze van upgrades is belangrijk omdat niet iedere
-                    tower hetzelfde doel heeft.
+                    een groter bereik, snellere aanvallen of nieuwe
+                    mogelijkheden.
                 </p>
 
             </div>
@@ -587,28 +1124,68 @@
             <table>
 
                 <tr>
-                    <th>Onderdeel</th>
-                    <th>Wat doet het?</th>
+
+                    <th>
+                        ⚙️ Onderdeel
+                    </th>
+
+                    <th>
+                        📖 Wat doet het?
+                    </th>
+
                 </tr>
 
-                <tr>
-                    <td>Damage</td>
-                    <td>Meer schade tegen Bloons.</td>
-                </tr>
 
                 <tr>
-                    <td>Attack Speed</td>
-                    <td>De tower valt sneller aan.</td>
+
+                    <td>
+                        Damage
+                    </td>
+
+                    <td>
+                        De tower doet meer schade.
+                    </td>
+
                 </tr>
 
-                <tr>
-                    <td>Range</td>
-                    <td>De tower kan een groter gebied bereiken.</td>
-                </tr>
 
                 <tr>
-                    <td>Abilities</td>
-                    <td>Speciale vaardigheden die je tijdens een ronde kunt gebruiken.</td>
+
+                    <td>
+                        Attack Speed
+                    </td>
+
+                    <td>
+                        De tower valt sneller aan.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Range
+                    </td>
+
+                    <td>
+                        De tower kan een groter gebied bereiken.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Abilities
+                    </td>
+
+                    <td>
+                        Speciale vaardigheden die je tijdens een
+                        ronde kunt gebruiken.
+                    </td>
+
                 </tr>
 
             </table>
@@ -618,25 +1195,36 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- =====================================================
          GAME MODES
-    ========================= -->
+    ===================================================== -->
 
     <section>
 
         <div class="container">
 
-            <h2>Game Modes</h2>
+            <h2>
+                🎮 Game Modes
+            </h2>
+
 
             <div class="grid">
 
+
                 <div class="card">
 
-                    <h3>Easy</h3>
+                    <div class="number">
+                        🟢
+                    </div>
+
+                    <h3>
+                        Easy
+                    </h3>
 
                     <p>
-                        Een relatief toegankelijke moeilijkheidsgraad
-                        waarin je rustig kunt beginnen.
+                        Een toegankelijke moeilijkheidsgraad
+                        om rustig te beginnen.
                     </p>
 
                 </div>
@@ -644,10 +1232,16 @@
 
                 <div class="card">
 
-                    <h3>Medium</h3>
+                    <div class="number">
+                        🟡
+                    </div>
+
+                    <h3>
+                        Medium
+                    </h3>
 
                     <p>
-                        Een moeilijkere uitdaging waarbij je beter
+                        Een grotere uitdaging waarbij je beter
                         moet nadenken over je strategie.
                     </p>
 
@@ -656,11 +1250,17 @@
 
                 <div class="card">
 
-                    <h3>Hard</h3>
+                    <div class="number">
+                        🟠
+                    </div>
+
+                    <h3>
+                        Hard
+                    </h3>
 
                     <p>
-                        Sterkere tegenstanders en een grotere uitdaging
-                        voor spelers die het moeilijker willen maken.
+                        Sterkere tegenstanders en moeilijkere
+                        uitdagingen.
                     </p>
 
                 </div>
@@ -668,14 +1268,21 @@
 
                 <div class="card">
 
-                    <h3>Speciale modes</h3>
+                    <div class="number">
+                        🔥
+                    </div>
+
+                    <h3>
+                        Speciale modes
+                    </h3>
 
                     <p>
-                        BTD6 bevat daarnaast verschillende speciale
-                        spelmodi en uitdagingen met andere regels.
+                        Verschillende uitdagingen met hun eigen
+                        regels en verrassingen.
                     </p>
 
                 </div>
+
 
             </div>
 
@@ -684,17 +1291,21 @@
     </section>
 
 
-    <!-- =========================
-         WAAROM IS HET LEUK?
-    ========================= -->
+
+    <!-- =====================================================
+         WAAROM IS BTD6 LEUK?
+    ===================================================== -->
 
     <section>
 
         <div class="container">
 
-            <h2>Waarom is BTD6 leuk?</h2>
+            <h2>
+                ❤️ Waarom is BTD6 leuk?
+            </h2>
 
-            <div class="card">
+
+            <div class="card highlight">
 
                 <p>
                     Een groot onderdeel van BTD6 is strategie.
@@ -702,15 +1313,32 @@
                     waar je ze plaatst en wanneer je ze upgradet.
                 </p>
 
-                <p>
-                    Er zijn veel verschillende combinaties mogelijk.
-                    Daardoor kun je dezelfde map op meerdere manieren spelen.
-                </p>
 
                 <p>
-                    Daarnaast is het spel toegankelijk om te beginnen,
-                    maar zijn de moeilijkere rondes en uitdagingen
-                    een stuk ingewikkelder.
+                    Er zijn veel verschillende combinaties mogelijk.
+                    Daardoor kun je dezelfde map op meerdere manieren
+                    spelen.
+                </p>
+
+
+                <p>
+                    Het spel is makkelijk om mee te beginnen,
+                    maar de moeilijkere rondes en uitdagingen
+                    kunnen behoorlijk lastig worden.
+                </p>
+
+            </div>
+
+
+            <div class="fun-box">
+
+                <h3>
+                    🎈 POP POP POP!
+                </h3>
+
+                <p>
+                    Uiteindelijk draait het allemaal om één ding:
+                    zoveel mogelijk Bloons laten knappen!
                 </p>
 
             </div>
@@ -720,19 +1348,34 @@
     </section>
 
 
-    <!-- =========================
-         TERUG
-    ========================= -->
+
+    <!-- =====================================================
+         TERUG NAAR HOME
+    ===================================================== -->
 
     <section>
 
         <div class="container">
 
-            <div class="card" style="text-align: center;">
+            <div
+                class="card"
+                style="text-align: center;"
+            >
 
-                <h3>Terug naar de homepage</h3>
+                <h3>
+                    🏠 Terug naar de homepage
+                </h3>
 
-                <a href="index.html" class="button">
+                <p>
+                    Klaar met BTD6? Bekijk dan ook de andere
+                    onderdelen van de website.
+                </p>
+
+
+                <a
+                    href="index.html"
+                    class="button"
+                >
                     Naar de homepage
                 </a>
 
@@ -743,21 +1386,24 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- =====================================================
          FOOTER
-    ========================= -->
+    ===================================================== -->
 
     <footer>
 
         <p>
-            BTD6 Informatica Website © 2026
+            🐒 <strong>BTD6 Informatica Website</strong>
         </p>
 
         <p>
-            Gemaakt met HTML en CSS
+            Gemaakt met HTML en CSS • 2026
         </p>
 
     </footer>
 
+
 </body>
 </html>
+```
