@@ -9,10 +9,6 @@
 
     <style>
 
-        /* =========================
-           BASIS
-        ========================= */
-
         * {
             margin: 0;
             padding: 0;
@@ -27,7 +23,6 @@
             line-height: 1.6;
         }
 
-
         /* =========================
            NAVIGATIE
         ========================= */
@@ -36,18 +31,12 @@
             position: fixed;
             top: 0;
             right: 0;
-
             width: 100%;
-
             background: rgba(10, 15, 20, 0.95);
-
             z-index: 1000;
-
             padding: 15px 35px;
-
             display: flex;
             justify-content: flex-end;
-
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
@@ -59,45 +48,30 @@
         .dropbtn {
             background: #f2a900;
             color: #111;
-
             padding: 12px 20px;
-
             font-size: 16px;
             font-weight: bold;
-
             border: none;
             border-radius: 8px;
-
             cursor: pointer;
         }
 
         .dropdown-content {
             display: none;
-
             position: absolute;
-
             right: 0;
-
             background: #202a33;
-
             min-width: 280px;
-
             border-radius: 8px;
-
             overflow: hidden;
-
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
         }
 
         .dropdown-content a {
             color: white;
-
             padding: 13px 17px;
-
             text-decoration: none;
-
             display: block;
-
             transition: 0.2s;
         }
 
@@ -110,33 +84,26 @@
             display: block;
         }
 
-
         /* =========================
            PAGINA HEADER
         ========================= */
 
         .page-header {
             background: #16222d;
-
             padding: 140px 10% 70px;
-
             text-align: center;
         }
 
         .page-header h1 {
             font-size: 55px;
-
             color: #f2a900;
-
             text-shadow: 3px 3px 0 #000;
         }
 
         .page-header p {
             font-size: 20px;
-
             margin-top: 15px;
         }
-
 
         /* =========================
            SECTIES
@@ -159,22 +126,14 @@
             margin: auto;
         }
 
-
-        /* =========================
-           TEKST
-        ========================= */
-
         h2 {
             font-size: 40px;
-
             color: #f2a900;
-
             margin-bottom: 25px;
         }
 
         h3 {
             color: #ffc533;
-
             margin-top: 25px;
             margin-bottom: 10px;
         }
@@ -183,86 +142,61 @@
             margin-bottom: 15px;
         }
 
-
         /* =========================
            KAARTEN
         ========================= */
 
         .card {
             background: #202d38;
-
             padding: 25px;
-
             margin: 20px 0;
-
             border-radius: 12px;
-
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
         }
 
-
         /* =========================
-           BINAIRE AFBEELDING
+           AFBEELDING
         ========================= */
 
         .binary-image {
             display: block;
-
             width: 100%;
             max-width: 800px;
-
             max-height: 500px;
-
             object-fit: contain;
-
             margin: 30px auto;
-
             border-radius: 15px;
-
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
         }
 
         .image-caption {
             text-align: center;
-
             color: #c4d3dd;
-
             font-size: 14px;
-
-            margin-top: -10px;
         }
 
-
         /* =========================
-           BINARIE BLOKKEN
+           BINAIRE BLOKKEN
         ========================= */
 
         .binary-box {
             display: grid;
-
             grid-template-columns: repeat(2, 1fr);
-
             gap: 15px;
-
             margin-top: 20px;
         }
 
         .bit {
             background: #273945;
-
             padding: 20px;
-
             border-radius: 10px;
-
             text-align: center;
         }
 
         .bit strong {
             color: #f2a900;
-
             font-size: 28px;
         }
-
 
         /* =========================
            REKENVOORBEELD
@@ -270,18 +204,12 @@
 
         .example {
             font-size: 28px;
-
             text-align: center;
-
             background: #111a21;
-
             padding: 20px;
-
             border-radius: 10px;
-
             margin: 20px 0;
         }
-
 
         /* =========================
            BINARY BONANZA
@@ -289,49 +217,31 @@
 
         .game-container {
             display: flex;
-
             justify-content: center;
-
             margin-top: 30px;
-
             overflow-x: auto;
         }
 
         iframe {
             border: none;
-
             border-radius: 10px;
-
             max-width: 100%;
         }
 
-
-        /* =========================
-           BINARY BONANZA LINK
-        ========================= */
-
         .game-link {
             display: block;
-
             width: 100%;
             max-width: 700px;
-
             margin: 25px auto;
-
             text-decoration: none;
         }
 
         .game-image {
             width: 100%;
-
             height: 180px;
-
             border-radius: 12px;
-
             overflow: hidden;
-
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-
             transition: 0.2s;
         }
 
@@ -342,73 +252,47 @@
         .binary-art {
             width: 100%;
             height: 100%;
-
-            background: linear-gradient(
-                135deg,
-                #1d4e89,
-                #0b6e4f
-            );
-
+            background: linear-gradient(135deg, #1d4e89, #0b6e4f);
             display: flex;
-
             flex-direction: column;
-
             align-items: center;
-
             justify-content: center;
-
             color: white;
-
             font-weight: bold;
-
             text-align: center;
         }
 
         .binary-art .small {
             font-size: 18px;
-
             letter-spacing: 5px;
-
             opacity: 0.8;
         }
 
         .binary-art .big {
             font-size: 42px;
-
             margin: 5px 0;
         }
 
-
         /* =========================
-           KNOP
+           BUTTON
         ========================= */
 
         .button {
             display: inline-block;
-
             margin-top: 20px;
-
             padding: 13px 24px;
-
             background: #f2a900;
-
             color: #111;
-
             text-decoration: none;
-
             font-weight: bold;
-
             border-radius: 8px;
-
             transition: 0.2s;
         }
 
         .button:hover {
             transform: scale(1.05);
-
             background: #ffc533;
         }
-
 
         /* =========================
            FOOTER
@@ -416,14 +300,10 @@
 
         footer {
             text-align: center;
-
             padding: 30px;
-
             background: #080d11;
-
             color: #aaa;
         }
-
 
         /* =========================
            MOBIEL
@@ -445,7 +325,6 @@
 
             .dropdown-content {
                 right: 0;
-
                 min-width: 230px;
             }
 
@@ -463,14 +342,12 @@
 
             .binary-art .small {
                 font-size: 12px;
-
                 letter-spacing: 2px;
             }
         }
 
     </style>
 </head>
-
 
 <body>
 
@@ -501,7 +378,8 @@
                     Binair stelsel
                 </a>
 
-                <a href="index.html#kleurmodellen">
+                <a href="index.html#kleurmode
+                llen">
                     Kleurmodellen
                 </a>
 
@@ -532,9 +410,8 @@
     </nav>
 
 
-
     <!-- =========================
-         PAGINA HEADER
+         HEADER
     ========================= -->
 
     <header class="page-header">
@@ -548,7 +425,6 @@
         </p>
 
     </header>
-
 
 
     <!-- =========================
@@ -587,7 +463,7 @@
             </div>
 
 
-            <!-- JOUW AFBEELDING -->
+            <!-- AFBEELDING -->
 
             <div class="card">
 
@@ -670,7 +546,6 @@
     </section>
 
 
-
     <!-- =========================
          DECIMAAL NAAR BINAIR
     ========================= -->
@@ -694,7 +569,6 @@
                     Van rechts naar links krijg je bijvoorbeeld:
                 </p>
 
-
                 <div class="example">
 
                     1 &nbsp;&nbsp;
@@ -706,7 +580,6 @@
 
                 </div>
 
-
                 <p>
                     We kunnen bijvoorbeeld het getal
                     <strong>13</strong> omzetten naar binair.
@@ -716,7 +589,6 @@
                     13 bestaat uit 8 + 4 + 1.
                 </p>
 
-
                 <div class="example">
 
                     <strong>
@@ -725,7 +597,6 @@
 
                 </div>
 
-
                 <h3>
                     Stap voor stap
                 </h3>
@@ -733,13 +604,10 @@
                 <p>
                     1 × 8 = 8
                     <br>
-
                     1 × 4 = 4
                     <br>
-
                     0 × 2 = 0
                     <br>
-
                     1 × 1 = 1
                 </p>
 
@@ -754,9 +622,8 @@
     </section>
 
 
-
     <!-- =========================
-         WAAROM BINair?
+         WAAROM BINAIR?
     ========================= -->
 
     <section>
@@ -791,7 +658,6 @@
         </div>
 
     </section>
-
 
 
     <!-- =========================
@@ -837,7 +703,6 @@
     </section>
 
 
-
     <!-- =========================
          BINARY BONANZA
     ========================= -->
@@ -849,7 +714,6 @@
             <h2>
                 Binary Bonanza
             </h2>
-
 
             <div class="card">
 
@@ -896,7 +760,7 @@
                 </a>
 
 
-                <!-- HET SPEL -->
+                <!-- SPEL -->
 
                 <div class="game-container">
 
@@ -915,7 +779,6 @@
         </div>
 
     </section>
-
 
 
     <!-- =========================
@@ -954,7 +817,6 @@
     </section>
 
 
-
     <!-- =========================
          FOOTER
     ========================= -->
@@ -970,7 +832,6 @@
         </p>
 
     </footer>
-
 
 </body>
 </html>

@@ -21,7 +21,9 @@
             line-height: 1.6;
         }
 
-        /* NAVIGATIE */
+        /* =========================
+           NAVIGATIE
+        ========================= */
 
         nav {
             position: fixed;
@@ -80,26 +82,33 @@
             display: block;
         }
 
-        /* HOMEPAGE */
+        /* =========================
+           HOMEPAGE
+        ========================= */
 
         .hero {
             position: relative;
             min-height: 100vh;
             overflow: hidden;
+
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
+
             padding: 30px;
         }
 
         .btd6-image {
             position: absolute;
             inset: 0;
+
             width: 100%;
             height: 100%;
+
             object-fit: cover;
             object-position: center;
+
             z-index: 0;
         }
 
@@ -107,7 +116,9 @@
             content: "";
             position: absolute;
             inset: 0;
+
             background: rgba(0, 0, 0, 0.45);
+
             z-index: 1;
         }
 
@@ -121,6 +132,7 @@
             font-size: 70px;
             text-shadow: 4px 4px 0 #000;
             margin-bottom: 15px;
+            color: #f2a900;
         }
 
         .hero p {
@@ -147,7 +159,9 @@
             background: #ffc533;
         }
 
-        /* SECTIES */
+        /* =========================
+           SECTIES
+        ========================= */
 
         section {
             padding: 90px 10%;
@@ -191,7 +205,9 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
         }
 
-        /* KLEURMODELLEN */
+        /* =========================
+           KLEURMODELLEN
+        ========================= */
 
         .color-grid {
             display: grid;
@@ -216,7 +232,9 @@
             border-left: 6px solid orange;
         }
 
-        /* AI */
+        /* =========================
+           AI
+        ========================= */
 
         .ai-highlight {
             border-left: 6px solid #00b4d8;
@@ -232,7 +250,9 @@
             color: #66d9ff;
         }
 
-        /* TABEL */
+        /* =========================
+           TABEL
+        ========================= */
 
         table {
             width: 100%;
@@ -253,7 +273,9 @@
             color: #111;
         }
 
-        /* FOOTER */
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             text-align: center;
@@ -262,7 +284,9 @@
             color: #aaa;
         }
 
-        /* MOBIEL */
+        /* =========================
+           MOBIEL
+        ========================= */
 
         @media (max-width: 800px) {
 
@@ -296,15 +320,27 @@
 
 <body>
 
-    <!-- NAVIGATIE -->
+    <!-- =========================
+         NAVIGATIE
+    ========================= -->
 
     <nav>
+
         <div class="dropdown">
-            <button class="dropbtn">☰ Menu</button>
+
+            <button class="dropbtn">
+                ☰ Menu
+            </button>
 
             <div class="dropdown-content">
 
-                <a href="index.html">Home</a>
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="btd6.html">
+                    Over BTD6
+                </a>
 
                 <a href="binairstelsel.html">
                     Binair stelsel
@@ -335,11 +371,15 @@
                 </a>
 
             </div>
+
         </div>
+
     </nav>
 
 
-    <!-- HOMEPAGE -->
+    <!-- =========================
+         HOMEPAGE
+    ========================= -->
 
     <section class="hero" id="home">
 
@@ -359,8 +399,8 @@
                 kunstmatige intelligentie en het binaire stelsel.
             </p>
 
-            <a href="binairstelsel.html" class="button">
-                Naar het binaire stelsel
+            <a href="btd6.html" class="button">
+                Meer over BTD6
             </a>
 
         </div>
@@ -368,7 +408,9 @@
     </section>
 
 
-    <!-- KLEURMODELLEN -->
+    <!-- =========================
+         KLEURMODELLEN
+    ========================= -->
 
     <section id="kleurmodellen">
 
@@ -408,364 +450,5 @@
                     <p>
                         CMYK staat voor Cyan, Magenta, Yellow en Key/Black.
                         Dit kleurmodel wordt vooral gebruikt bij printers.
-                    </p>
-
-                    <p>
-                        De kleuren worden gemengd met inkt in plaats van met licht.
-                    </p>
-
-                </div>
-
-
-                <div class="card hex">
-
-                    <h3>HEX</h3>
-
-                    <p>
-                        HEX-codes worden veel gebruikt op websites.
-                        Een kleur wordt weergegeven met zes tekens.
-                    </p>
-
-                    <p>
-                        Bijvoorbeeld:
-                        <strong>#FF0000</strong> betekent rood.
-                    </p>
-
-                </div>
-
-
-                <div class="card hsv">
-
-                    <h3>HSV</h3>
-
-                    <p>
-                        HSV betekent Hue, Saturation en Value.
-                        Hiermee kun je kleuren beschrijven op basis van
-                        kleur, verzadiging en helderheid.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- COMPRESSIE -->
-
-    <section id="compressie">
-
-        <div class="container">
-
-            <h2>Compressie: Bitmap / Vector</h2>
-
-            <div class="card">
-
-                <h3>Bitmap</h3>
-
-                <p>
-                    Een bitmapafbeelding bestaat uit heel veel kleine pixels.
-                    Elke pixel heeft informatie over bijvoorbeeld de kleur.
-                </p>
-
-                <p>
-                    Een voordeel is dat foto's er goed mee kunnen worden
-                    weergegeven. Een nadeel is dat een bitmap minder scherp
-                    kan worden wanneer je hem heel groot maakt.
-                </p>
-
-                <p>
-                    Voorbeelden zijn <strong>JPG, PNG en GIF</strong>.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <h3>Vector</h3>
-
-                <p>
-                    Een vectorafbeelding bestaat niet uit losse pixels.
-                    De afbeelding wordt opgebouwd uit lijnen, vormen en
-                    wiskundige beschrijvingen.
-                </p>
-
-                <p>
-                    Daardoor kun je een vectorafbeelding heel groot maken
-                    zonder dat de afbeelding onscherp wordt.
-                </p>
-
-                <p>
-                    Een bekend vectorformaat is <strong>SVG</strong>.
-                </p>
-
-            </div>
-
-
-            <table>
-
-                <tr>
-                    <th>Bitmap</th>
-                    <th>Vector</th>
-                </tr>
-
-                <tr>
-                    <td>Bestaat uit pixels</td>
-                    <td>Bestaat uit vormen en lijnen</td>
-                </tr>
-
-                <tr>
-                    <td>Goed voor foto's</td>
-                    <td>Goed voor logo's en tekeningen</td>
-                </tr>
-
-                <tr>
-                    <td>Kan onscherp worden bij vergroten</td>
-                    <td>Blijft scherp bij vergroten</td>
-                </tr>
-
-                <tr>
-                    <td>JPG / PNG / GIF</td>
-                    <td>SVG</td>
-                </tr>
-
-            </table>
-
-        </div>
-
-    </section>
-
-
-    <!-- AI -->
-
-    <section id="ai">
-
-        <div class="container">
-
-            <h2>AI</h2>
-
-            <div class="card ai-highlight">
-
-                <h3>Wat is AI?</h3>
-
-                <p>
-                    AI staat voor Artificial Intelligence, oftewel kunstmatige
-                    intelligentie. AI is technologie waarmee computers taken
-                    kunnen uitvoeren waarvoor normaal gesproken menselijke
-                    intelligentie nodig is.
-                </p>
-
-                <p>
-                    Voorbeelden hiervan zijn teksten begrijpen,
-                    afbeeldingen maken, patronen herkennen en vragen beantwoorden.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <h3>AI in het dagelijks leven</h3>
-
-                <p>
-                    Kunstmatige intelligentie wordt tegenwoordig op veel plekken
-                    gebruikt. Denk bijvoorbeeld aan aanbevelingen op YouTube,
-                    automatische vertalingen, spraakassistenten en systemen
-                    die foto's herkennen.
-                </p>
-
-                <p>
-                    Ook smartphones gebruiken AI voor bijvoorbeeld foto's,
-                    spraakherkenning en persoonlijke aanbevelingen.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- MIJN GEBRUIK VAN AI -->
-
-    <section id="mijn-ai">
-
-        <div class="container">
-
-            <h2>Waar gebruik ik AI voor en leer ik er iets van?</h2>
-
-            <div class="card">
-
-                <p>
-                    Ik gebruik AI vooral om uitleg te krijgen over onderwerpen
-                    die ik lastig vind. Ik kan bijvoorbeeld een vraag stellen
-                    wanneer ik iets uit een schoolvak niet helemaal begrijp.
-                </p>
-
-                <p>
-                    Ook kan AI helpen om ideeën te bedenken of om mijn eigen
-                    tekst te verbeteren. Ik probeer de antwoorden wel zelf
-                    te begrijpen en controleer belangrijke informatie.
-                </p>
-
-                <p>
-                    Ik leer er dus vooral iets van wanneer ik AI gebruik als
-                    een hulpmiddel om iets uit te leggen. Wanneer ik alleen
-                    een antwoord overneem zonder het te begrijpen, leer ik
-                    er veel minder van.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- AI OP MOBIELE TELEFOON -->
-
-    <section id="mobiel">
-
-        <div class="container">
-
-            <h2>Mijn mobiele telefoon en AI</h2>
-
-            <div class="card">
-
-                <h3>Mijn telefoon</h3>
-
-                <p>
-                    Ik heb een
-                    <strong>[VUL HIER JOUW TELEFOON IN]</strong>.
-                </p>
-
-                <p>
-                    Op moderne smartphones wordt AI op verschillende manieren
-                    gebruikt. Denk bijvoorbeeld aan camerafuncties die
-                    automatisch scènes herkennen, stemherkenning,
-                    tekstvoorspellingen en functies die foto's automatisch
-                    verbeteren.
-                </p>
-
-                <p>
-                    Welke AI-functies beschikbaar zijn, verschilt per merk,
-                    model en softwareversie.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <h3>Voorbeeld van AI op een smartphone</h3>
-
-                <p>
-                    Een camera kan bijvoorbeeld herkennen of je een persoon,
-                    dier, landschap of nachtelijke scène fotografeert.
-                    De software kan vervolgens automatisch instellingen
-                    aanpassen om de foto te verbeteren.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- AI-ARTIKEL -->
-
-    <section id="artikel">
-
-        <div class="container">
-
-            <h2>AI-artikel</h2>
-
-            <div class="card ai-highlight">
-
-                <h3>
-                    Artificial intelligence in higher education:
-                    student use, perceived benefits, and emerging risks
-                </h3>
-
-                <p>
-                    Het artikel is gepubliceerd in
-                    <strong>Frontiers in Education</strong> op
-                    <strong>25 juni 2026</strong>.
-                </p>
-
-                <h3>Samenvatting</h3>
-
-                <p>
-                    In het artikel wordt onderzocht hoe studenten AI gebruiken
-                    tijdens hun opleiding en hoe zij de voordelen en nadelen
-                    ervan ervaren. De onderzoekers onderzochten 467 studenten.
-                </p>
-
-                <p>
-                    Uit het onderzoek bleek dat AI door veel studenten regelmatig
-                    wordt gebruikt voor bijvoorbeeld studeren, onderzoek doen
-                    en teksten schrijven. Veel studenten vinden AI handig omdat
-                    het tijd kan besparen en kan helpen bij het begrijpen van
-                    lesstof.
-                </p>
-
-                <p>
-                    Tegelijkertijd maken studenten zich zorgen over te veel
-                    afhankelijkheid van AI en minder zelfstandig nadenken.
-                    Ook bleek dat veel studenten niet precies weten welke vormen
-                    van AI-gebruik op hun opleiding zijn toegestaan.
-                </p>
-
-                <h3>Mijn mening</h3>
-
-                <p>
-                    Ik vind dat AI handig kan zijn voor school, zolang je het
-                    gebruikt als hulpmiddel en niet alles door AI laat doen.
-                    Je moet zelf blijven nadenken en controleren of de
-                    informatie klopt.
-                </p>
-
-                <p>
-                    Ik herken ook het punt uit het artikel dat AI ervoor kan
-                    zorgen dat je minder zelfstandig nadenkt wanneer je het
-                    voor iedere opdracht gebruikt. Daarom vind ik dat je vooral
-                    AI moet gebruiken om iets te begrijpen en te leren.
-                </p>
-
-                <p class="source">
-                    Bron:
-                    <a
-                        href="https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1812390/full"
-                        target="_blank">
-                        Frontiers in Education
-                    </a>
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <p>
-            BTD6 Informatica Website © 2026
-        </p>
-
-        <p>
-            Gemaakt met HTML en CSS
-        </p>
-
-    </footer>
-
-</body>
-</html>
+                    </
 ```
