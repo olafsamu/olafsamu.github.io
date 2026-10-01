@@ -21,7 +21,9 @@
             line-height: 1.6;
         }
 
-        /* NAVIGATIE */
+        /* =========================
+           NAVIGATIE
+        ========================= */
 
         nav {
             position: fixed;
@@ -80,7 +82,9 @@
             display: block;
         }
 
-        /* INHOUD */
+        /* =========================
+           PAGINA HEADER
+        ========================= */
 
         .page-header {
             background: #16222d;
@@ -98,6 +102,10 @@
             font-size: 20px;
             margin-top: 15px;
         }
+
+        /* =========================
+           INHOUD
+        ========================= */
 
         section {
             padding: 80px 10%;
@@ -140,7 +148,31 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
         }
 
-        /* BINARIE VOORBEELDEN */
+        /* =========================
+           AFBEELDING BINair
+        ========================= */
+
+        .binary-image {
+            display: block;
+            width: 100%;
+            max-width: 800px;
+            max-height: 500px;
+            object-fit: cover;
+            margin: 30px auto;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .image-caption {
+            text-align: center;
+            color: #c4d3dd;
+            font-size: 14px;
+            margin-top: -15px;
+        }
+
+        /* =========================
+           BINARIE VOORBEELDEN
+        ========================= */
 
         .binary-box {
             display: grid;
@@ -170,7 +202,9 @@
             margin: 20px 0;
         }
 
-        /* BINARY BONANZA */
+        /* =========================
+           BINARY BONANZA
+        ========================= */
 
         .game-container {
             display: flex;
@@ -228,7 +262,9 @@
             font-size: 42px;
         }
 
-        /* FOOTER */
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             text-align: center;
@@ -237,7 +273,9 @@
             color: #aaa;
         }
 
-        /* MOBIEL */
+        /* =========================
+           MOBIEL
+        ========================= */
 
         @media (max-width: 800px) {
 
@@ -269,13 +307,19 @@
             .binary-art .small {
                 font-size: 12px;
             }
+
+            .binary-image {
+                max-height: 350px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- NAVIGATIE -->
+    <!-- =========================
+         NAVIGATIE
+    ========================= -->
 
     <nav>
 
@@ -326,7 +370,9 @@
     </nav>
 
 
-    <!-- PAGINA HEADER -->
+    <!-- =========================
+         PAGINA HEADER
+    ========================= -->
 
     <header class="page-header">
 
@@ -339,7 +385,9 @@
     </header>
 
 
-    <!-- WAT IS BINair -->
+    <!-- =========================
+         WAT IS BINair?
+    ========================= -->
 
     <section>
 
@@ -366,6 +414,25 @@
                 <p>
                     Een enkel binair cijfer wordt een
                     <strong>bit</strong> genoemd.
+                </p>
+
+            </div>
+
+
+            <!-- JOUW AFBEELDING -->
+
+            <div class="card">
+
+                <h3>Afbeelding</h3>
+
+                <img
+                    src="./images%20%283%29.jpeg"
+                    alt="Afbeelding over het binaire stelsel"
+                    class="binary-image"
+                >
+
+                <p class="image-caption">
+                    Afbeelding bij het binaire stelsel.
                 </p>
 
             </div>
@@ -423,7 +490,9 @@
     </section>
 
 
-    <!-- DECIMAAL NAAR BINair -->
+    <!-- =========================
+         DECIMAAL NAAR BINair
+    ========================= -->
 
     <section>
 
@@ -478,7 +547,9 @@
     </section>
 
 
-    <!-- WAAROM GEBRUIKEN COMPUTERS BINair -->
+    <!-- =========================
+         WAAROM BINair?
+    ========================= -->
 
     <section>
 
@@ -512,7 +583,9 @@
     </section>
 
 
-    <!-- BINARY BONANZA -->
+    <!-- =========================
+         BINARY BONANZA
+    ========================= -->
 
     <section>
 
@@ -564,62 +637,5 @@
                 </a>
 
 
-                <!-- GAME -->
-
-                <div class="game-container">
-
-                    <iframe
-                        src="https://games.penjee.com/binary-bonanza/game.php"
-                        width="700"
-                        height="500"
-                        frameborder="no"
-                        scrolling="no">
-                    </iframe>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- TERUG NAAR HOME -->
-
-    <section>
-
-        <div class="container">
-
-            <div class="card" style="text-align: center;">
-
-                <h3>Terug naar de homepage</h3>
-
-                <a href="index.html" class="button">
-                    Naar de homepage
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <p>
-            BTD6 Informatica Website © 2026
-        </p>
-
-        <p>
-            Gemaakt met HTML en CSS
-        </p>
-
-    </footer>
-
-</body>
-</html>
+                <!-- BINARY BONANZA GAME -->
 ```
