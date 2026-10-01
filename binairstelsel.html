@@ -1,26 +1,625 @@
+```html
 <!DOCTYPE html>
-<html> <!--html element-->
-  <head>
-    <title>beau is tuff</title>
-    <meta charset="utf-8">
-  </head>
-  <body>
-    als je dit leest heb ik het goed gedaan
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binair stelsel - BTD6 Informatica</title>
 
-    <a href="index.html">terug naar Homepage</a> <!--Link naar Homepage-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-  </body>
-</html>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #101820;
+            color: white;
+            line-height: 1.6;
+        }
 
-<html>
-  <body>
-  <img src="images (3).jpeg" alt="binair stelsel"> <!--afbeelding binair stelsel-->
+        /* NAVIGATIE */
+
+        nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            background: rgba(10, 15, 20, 0.95);
+            z-index: 1000;
+            padding: 15px 35px;
+            display: flex;
+            justify-content: flex-end;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background: #f2a900;
+            color: #111;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background: #202a33;
+            min-width: 280px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 13px 17px;
+            text-decoration: none;
+            display: block;
+            transition: 0.2s;
+        }
+
+        .dropdown-content a:hover {
+            background: #f2a900;
+            color: #111;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* INHOUD */
+
+        .page-header {
+            background: #16222d;
+            padding: 140px 10% 70px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 55px;
+            color: #f2a900;
+            text-shadow: 3px 3px 0 #000;
+        }
+
+        .page-header p {
+            font-size: 20px;
+            margin-top: 15px;
+        }
+
+        section {
+            padding: 80px 10%;
+        }
+
+        section:nth-child(even) {
+            background: #16222d;
+        }
+
+        section:nth-child(odd) {
+            background: #101820;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        h2 {
+            font-size: 40px;
+            color: #f2a900;
+            margin-bottom: 25px;
+        }
+
+        h3 {
+            color: #ffc533;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .card {
+            background: #202d38;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        /* BINARIE VOORBEELDEN */
+
+        .binary-box {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .bit {
+            background: #273945;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .bit strong {
+            color: #f2a900;
+            font-size: 28px;
+        }
+
+        .example {
+            font-size: 28px;
+            text-align: center;
+            background: #111a21;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        /* BINARY BONANZA */
+
+        .game-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            overflow-x: auto;
+        }
+
+        iframe {
+            border: none;
+            border-radius: 10px;
+            max-width: 100%;
+        }
+
+        .game-link {
+            display: block;
+            width: 100%;
+            max-width: 700px;
+            margin: 25px auto;
+            text-decoration: none;
+        }
+
+        .game-image {
+            width: 100%;
+            height: 180px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transition: 0.2s;
+        }
+
+        .game-image:hover {
+            transform: scale(1.02);
+        }
+
+        .binary-art {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1d4e89, #0b6e4f);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .binary-art .small {
+            font-size: 18px;
+            letter-spacing: 5px;
+            opacity: 0.8;
+        }
+
+        .binary-art .big {
+            font-size: 42px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #080d11;
+            color: #aaa;
+        }
+
+        /* MOBIEL */
+
+        @media (max-width: 800px) {
+
+            .page-header h1 {
+                font-size: 40px;
+            }
+
+            section {
+                padding: 70px 6%;
+            }
+
+            nav {
+                padding: 12px 15px;
+            }
+
+            .dropdown-content {
+                right: 0;
+                min-width: 230px;
+            }
+
+            .binary-box {
+                grid-template-columns: 1fr;
+            }
+
+            .binary-art .big {
+                font-size: 28px;
+            }
+
+            .binary-art .small {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATIE -->
+
+    <nav>
+
+        <div class="dropdown">
+
+            <button class="dropbtn">
+                ☰ Menu
+            </button>
+
+            <div class="dropdown-content">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="binairstelsel.html">
+                    Binair stelsel
+                </a>
+
+                <a href="index.html#kleurmodellen">
+                    Kleurmodellen
+                </a>
+
+                <a href="index.html#compressie">
+                    Compressie: Bitmap / Vector
+                </a>
+
+                <a href="index.html#ai">
+                    AI
+                </a>
+
+                <a href="index.html#mijn-ai">
+                    Waar gebruik ik AI voor?
+                </a>
+
+                <a href="index.html#mobiel">
+                    AI in mijn mobiele telefoon
+                </a>
+
+                <a href="index.html#artikel">
+                    AI-artikel
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- PAGINA HEADER -->
+
+    <header class="page-header">
+
+        <h1>Binair stelsel</h1>
+
+        <p>
+            Een kijkje in de taal van computers
+        </p>
+
+    </header>
+
+
+    <!-- WAT IS BINair -->
+
+    <section>
+
+        <div class="container">
+
+            <h2>Wat is het binaire stelsel?</h2>
+
+            <div class="card">
+
+                <p>
+                    Computers werken met het binaire stelsel.
+                    In plaats van de cijfers 0 tot en met 9 gebruikt
+                    het binaire stelsel alleen de cijfers
+                    <strong>0 en 1</strong>.
+                </p>
+
+                <p>
+                    Deze twee cijfers worden gebruikt om informatie
+                    digitaal op te slaan en te verwerken.
+                    Een 0 en een 1 kunnen bijvoorbeeld aangeven
+                    of iets uit of aan staat.
+                </p>
+
+                <p>
+                    Een enkel binair cijfer wordt een
+                    <strong>bit</strong> genoemd.
+                </p>
+
+            </div>
+
+
+            <div class="binary-box">
+
+                <div class="bit">
+
+                    <strong>0</strong>
+
+                    <p>
+                        Uit / false
+                    </p>
+
+                </div>
+
+
+                <div class="bit">
+
+                    <strong>1</strong>
+
+                    <p>
+                        Aan / true
+                    </p>
+
+                </div>
+
+
+                <div class="bit">
+
+                    <strong>8</strong>
+
+                    <p>
+                        2³
+                    </p>
+
+                </div>
+
+
+                <div class="bit">
+
+                    <strong>4</strong>
+
+                    <p>
+                        2²
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DECIMAAL NAAR BINair -->
+
+    <section>
+
+        <div class="container">
+
+            <h2>Van decimaal naar binair</h2>
+
+            <div class="card">
+
+                <p>
+                    Elk cijfer in een binair getal heeft een waarde.
+                    Deze waarden zijn machten van 2.
+                </p>
+
+                <p>
+                    Van rechts naar links krijg je bijvoorbeeld:
+                </p>
+
+                <div class="example">
+                    1 &nbsp; 2 &nbsp; 4 &nbsp; 8 &nbsp; 16 &nbsp; 32
+                </div>
+
+                <p>
+                    We kunnen bijvoorbeeld het getal 13 omzetten.
+                    13 bestaat uit 8 + 4 + 1.
+                </p>
+
+                <div class="example">
+                    <strong>1101₂ = 13₁₀</strong>
+                </div>
+
+                <p>
+                    Dit betekent:
+                    <br>
+                    1 × 8 = 8
+                    <br>
+                    1 × 4 = 4
+                    <br>
+                    0 × 2 = 0
+                    <br>
+                    1 × 1 = 1
+                </p>
+
+                <p>
+                    8 + 4 + 0 + 1 = 13.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WAAROM GEBRUIKEN COMPUTERS BINair -->
+
+    <section>
+
+        <div class="container">
+
+            <h2>Waarom gebruiken computers binair?</h2>
+
+            <div class="card">
+
+                <p>
+                    Computers werken met elektronische schakelingen.
+                    Een elektronisch onderdeel kan bijvoorbeeld twee
+                    duidelijke toestanden hebben: aan of uit.
+                </p>
+
+                <p>
+                    Dit past goed bij de twee waarden van het binaire
+                    stelsel: 1 en 0.
+                </p>
+
+                <p>
+                    Door heel veel bits met elkaar te combineren,
+                    kunnen computers teksten, foto's, video's, muziek
+                    en programma's opslaan.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BINARY BONANZA -->
+
+    <section>
+
+        <div class="container">
+
+            <h2>Binary Bonanza</h2>
+
+            <div class="card">
+
+                <p>
+                    Binary Bonanza is een spel waarmee je kunt oefenen
+                    met het binaire stelsel.
+                </p>
+
+                <p>
+                    Klik op de afbeelding om het spel ook in een
+                    apart tabblad te openen.
+                </p>
+
+
+                <!-- KLIKBARE AFBEELDING -->
+
+                <a
+                    href="https://games.penjee.com/binary-bonanza/game.php"
+                    target="_blank"
+                    class="game-link"
+                >
+
+                    <div class="game-image">
+
+                        <div class="binary-art">
+
+                            <span class="small">
+                                01001001 01001110 01000110 01001111
+                            </span>
+
+                            <span class="big">
+                                BINARY BONANZA
+                            </span>
+
+                            <span class="small">
+                                KLIK HIER OM TE SPELEN
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+                <!-- GAME -->
+
+                <div class="game-container">
+
+                    <iframe
+                        src="https://games.penjee.com/binary-bonanza/game.php"
+                        width="700"
+                        height="500"
+                        frameborder="no"
+                        scrolling="no">
+                    </iframe>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TERUG NAAR HOME -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="card" style="text-align: center;">
+
+                <h3>Terug naar de homepage</h3>
+
+                <a href="index.html" class="button">
+                    Naar de homepage
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            BTD6 Informatica Website © 2026
+        </p>
+
+        <p>
+            Gemaakt met HTML en CSS
+        </p>
+
+    </footer>
 
 </body>
-
 </html>
- 
-
-
-
-
+```

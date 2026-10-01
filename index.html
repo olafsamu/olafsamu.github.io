@@ -21,9 +21,7 @@
             line-height: 1.6;
         }
 
-        /* =========================
-           NAVIGATIE
-        ========================= */
+        /* NAVIGATIE */
 
         nav {
             position: fixed;
@@ -82,33 +80,26 @@
             display: block;
         }
 
-        /* =========================
-           HOMEPAGE
-        ========================= */
+        /* HOMEPAGE */
 
         .hero {
             position: relative;
             min-height: 100vh;
             overflow: hidden;
-
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-
             padding: 30px;
         }
 
         .btd6-image {
             position: absolute;
             inset: 0;
-
             width: 100%;
             height: 100%;
-
             object-fit: cover;
             object-position: center;
-
             z-index: 0;
         }
 
@@ -156,9 +147,7 @@
             background: #ffc533;
         }
 
-        /* =========================
-           SECTIES
-        ========================= */
+        /* SECTIES */
 
         section {
             padding: 90px 10%;
@@ -202,92 +191,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
         }
 
-        /* =========================
-           BINARIE STELSEL
-        ========================= */
-
-        .binary-box {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .bit {
-            background: #273945;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .bit strong {
-            color: #f2a900;
-            font-size: 28px;
-        }
-
-        /* =========================
-           BINARY BONANZA
-        ========================= */
-
-        .game-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-            overflow-x: auto;
-        }
-
-        iframe {
-            border: none;
-            border-radius: 10px;
-            max-width: 100%;
-        }
-
-        .game-link {
-            display: block;
-            width: 100%;
-            max-width: 700px;
-            margin: 25px auto;
-            text-decoration: none;
-        }
-
-        .game-image {
-            width: 100%;
-            height: 180px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-            transition: 0.2s;
-        }
-
-        .game-image:hover {
-            transform: scale(1.02);
-        }
-
-        .binary-art {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #1d4e89, #0b6e4f);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-        }
-
-        .binary-art .small {
-            font-size: 18px;
-            letter-spacing: 5px;
-            opacity: 0.8;
-        }
-
-        .binary-art .big {
-            font-size: 42px;
-        }
-
-        /* =========================
-           KLEURMODELLEN
-        ========================= */
+        /* KLEURMODELLEN */
 
         .color-grid {
             display: grid;
@@ -312,9 +216,7 @@
             border-left: 6px solid orange;
         }
 
-        /* =========================
-           AI
-        ========================= */
+        /* AI */
 
         .ai-highlight {
             border-left: 6px solid #00b4d8;
@@ -330,9 +232,7 @@
             color: #66d9ff;
         }
 
-        /* =========================
-           TABEL
-        ========================= */
+        /* TABEL */
 
         table {
             width: 100%;
@@ -353,9 +253,7 @@
             color: #111;
         }
 
-        /* =========================
-           FOOTER
-        ========================= */
+        /* FOOTER */
 
         footer {
             text-align: center;
@@ -364,9 +262,7 @@
             color: #aaa;
         }
 
-        /* =========================
-           MOBIEL
-        ========================= */
+        /* MOBIEL */
 
         @media (max-width: 800px) {
 
@@ -378,7 +274,6 @@
                 font-size: 18px;
             }
 
-            .binary-box,
             .color-grid {
                 grid-template-columns: 1fr;
             }
@@ -395,49 +290,59 @@
                 right: 0;
                 min-width: 230px;
             }
-
-            .binary-art .big {
-                font-size: 28px;
-            }
-
-            .binary-art .small {
-                font-size: 12px;
-            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- =========================
-         NAVIGATIE
-    ========================= -->
+    <!-- NAVIGATIE -->
 
     <nav>
         <div class="dropdown">
             <button class="dropbtn">☰ Menu</button>
 
             <div class="dropdown-content">
-                <a href="#home">Home</a>
-                <a href="#binair">Binair stelsel</a>
-                <a href="#kleurmodellen">Kleurmodellen</a>
-                <a href="#compressie">Compressie: Bitmap / Vector</a>
-                <a href="#ai">AI</a>
-                <a href="#mijn-ai">Waar gebruik ik AI voor?</a>
-                <a href="#mobiel">AI in mijn mobiele telefoon</a>
-                <a href="#artikel">AI-artikel</a>
+
+                <a href="index.html">Home</a>
+
+                <a href="binairstelsel.html">
+                    Binair stelsel
+                </a>
+
+                <a href="#kleurmodellen">
+                    Kleurmodellen
+                </a>
+
+                <a href="#compressie">
+                    Compressie: Bitmap / Vector
+                </a>
+
+                <a href="#ai">
+                    AI
+                </a>
+
+                <a href="#mijn-ai">
+                    Waar gebruik ik AI voor?
+                </a>
+
+                <a href="#mobiel">
+                    AI in mijn mobiele telefoon
+                </a>
+
+                <a href="#artikel">
+                    AI-artikel
+                </a>
+
             </div>
         </div>
     </nav>
 
 
-    <!-- =========================
-         HOMEPAGE
-    ========================= -->
+    <!-- HOMEPAGE -->
 
     <section class="hero" id="home">
 
-        <!-- Jouw afbeelding uit GitHub -->
         <img
             src="./images%20%284%29.jpeg"
             alt="Bloons TD 6"
@@ -450,12 +355,12 @@
 
             <p>
                 Mijn website over informatica, met Bloons TD 6 als thema.
-                Hier vind je informatie over het binaire stelsel,
-                kleurmodellen, compressie en kunstmatige intelligentie.
+                Hier vind je informatie over kleurmodellen, compressie,
+                kunstmatige intelligentie en het binaire stelsel.
             </p>
 
-            <a href="#binair" class="button">
-                Bekijk de onderwerpen
+            <a href="binairstelsel.html" class="button">
+                Naar het binaire stelsel
             </a>
 
         </div>
@@ -463,127 +368,7 @@
     </section>
 
 
-    <!-- =========================
-         BINARIE STELSEL
-    ========================= -->
-
-    <section id="binair">
-
-        <div class="container">
-
-            <h2>Binair stelsel</h2>
-
-            <div class="card">
-
-                <p>
-                    Computers werken met het binaire stelsel. In plaats van
-                    de cijfers 0 tot en met 9 gebruikt het binaire stelsel
-                    alleen de cijfers <strong>0 en 1</strong>.
-                </p>
-
-                <p>
-                    Een 0 en een 1 kunnen bijvoorbeeld worden gebruikt om
-                    aan te geven of iets uit of aan staat. Computers kunnen
-                    met deze twee waarden heel veel informatie opslaan en verwerken.
-                </p>
-
-                <h3>Voorbeeld</h3>
-
-                <p>
-                    Het decimale getal 13 kan worden geschreven als:
-                </p>
-
-                <p style="font-size: 25px; text-align: center;">
-                    <strong>1101₂ = 13₁₀</strong>
-                </p>
-
-            </div>
-
-            <div class="binary-box">
-
-                <div class="bit">
-                    <strong>0</strong>
-                    <p>Uit / false</p>
-                </div>
-
-                <div class="bit">
-                    <strong>1</strong>
-                    <p>Aan / true</p>
-                </div>
-
-                <div class="bit">
-                    <strong>8</strong>
-                    <p>2³</p>
-                </div>
-
-                <div class="bit">
-                    <strong>4</strong>
-                    <p>2²</p>
-                </div>
-
-            </div>
-
-
-            <div class="card">
-
-                <h3>Binary Bonanza</h3>
-
-                <p>
-                    Met Binary Bonanza kun je op een leuke manier oefenen
-                    met het binaire stelsel.
-                </p>
-
-                <!-- Klikbare afbeelding -->
-                <a
-                    href="https://games.penjee.com/binary-bonanza/game.php"
-                    target="_blank"
-                    class="game-link"
-                >
-                    <div class="game-image">
-
-                        <div class="binary-art">
-
-                            <span class="small">
-                                01001001 01001110 01000110 01001111
-                            </span>
-
-                            <span class="big">
-                                BINARY BONANZA
-                            </span>
-
-                            <span class="small">
-                                KLIK HIER OM TE SPELEN
-                            </span>
-
-                        </div>
-
-                    </div>
-                </a>
-
-
-                <!-- Jouw Binary Bonanza game -->
-                <div class="game-container">
-
-                    <iframe
-                        src="https://games.penjee.com/binary-bonanza/game.php"
-                        width="700"
-                        height="500"
-                        frameborder="no"
-                        scrolling="no">
-                    </iframe>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         KLEURMODELLEN
-    ========================= -->
+    <!-- KLEURMODELLEN -->
 
     <section id="kleurmodellen">
 
@@ -668,9 +453,7 @@
     </section>
 
 
-    <!-- =========================
-         COMPRESSIE
-    ========================= -->
+    <!-- COMPRESSIE -->
 
     <section id="compressie">
 
@@ -688,9 +471,9 @@
                 </p>
 
                 <p>
-                    Een voordeel is dat foto's er goed mee kunnen worden weergegeven.
-                    Een nadeel is dat een bitmap minder scherp kan worden wanneer
-                    je hem heel groot maakt.
+                    Een voordeel is dat foto's er goed mee kunnen worden
+                    weergegeven. Een nadeel is dat een bitmap minder scherp
+                    kan worden wanneer je hem heel groot maakt.
                 </p>
 
                 <p>
@@ -706,8 +489,8 @@
 
                 <p>
                     Een vectorafbeelding bestaat niet uit losse pixels.
-                    De afbeelding wordt opgebouwd uit lijnen, vormen en wiskundige
-                    beschrijvingen.
+                    De afbeelding wordt opgebouwd uit lijnen, vormen en
+                    wiskundige beschrijvingen.
                 </p>
 
                 <p>
@@ -756,9 +539,7 @@
     </section>
 
 
-    <!-- =========================
-         AI
-    ========================= -->
+    <!-- AI -->
 
     <section id="ai">
 
@@ -772,14 +553,14 @@
 
                 <p>
                     AI staat voor Artificial Intelligence, oftewel kunstmatige
-                    intelligentie. AI is technologie waarmee computers taken kunnen
-                    uitvoeren waarvoor normaal gesproken menselijke intelligentie
-                    nodig is.
+                    intelligentie. AI is technologie waarmee computers taken
+                    kunnen uitvoeren waarvoor normaal gesproken menselijke
+                    intelligentie nodig is.
                 </p>
 
                 <p>
-                    Voorbeelden hiervan zijn teksten begrijpen, afbeeldingen maken,
-                    patronen herkennen en vragen beantwoorden.
+                    Voorbeelden hiervan zijn teksten begrijpen,
+                    afbeeldingen maken, patronen herkennen en vragen beantwoorden.
                 </p>
 
             </div>
@@ -792,8 +573,8 @@
                 <p>
                     Kunstmatige intelligentie wordt tegenwoordig op veel plekken
                     gebruikt. Denk bijvoorbeeld aan aanbevelingen op YouTube,
-                    automatische vertalingen, spraakassistenten en systemen die
-                    foto's herkennen.
+                    automatische vertalingen, spraakassistenten en systemen
+                    die foto's herkennen.
                 </p>
 
                 <p>
@@ -808,9 +589,7 @@
     </section>
 
 
-    <!-- =========================
-         MIJN GEBRUIK VAN AI
-    ========================= -->
+    <!-- MIJN GEBRUIK VAN AI -->
 
     <section id="mijn-ai">
 
@@ -827,16 +606,16 @@
                 </p>
 
                 <p>
-                    Ook kan AI helpen om ideeën te bedenken of om mijn eigen tekst
-                    te verbeteren. Ik probeer de antwoorden wel zelf te begrijpen
-                    en controleer belangrijke informatie.
+                    Ook kan AI helpen om ideeën te bedenken of om mijn eigen
+                    tekst te verbeteren. Ik probeer de antwoorden wel zelf
+                    te begrijpen en controleer belangrijke informatie.
                 </p>
 
                 <p>
-                    Ik leer er dus vooral iets van wanneer ik AI gebruik als een
-                    hulpmiddel om iets uit te leggen. Wanneer ik alleen een
-                    antwoord overneem zonder het te begrijpen, leer ik er veel minder
-                    van.
+                    Ik leer er dus vooral iets van wanneer ik AI gebruik als
+                    een hulpmiddel om iets uit te leggen. Wanneer ik alleen
+                    een antwoord overneem zonder het te begrijpen, leer ik
+                    er veel minder van.
                 </p>
 
             </div>
@@ -846,9 +625,7 @@
     </section>
 
 
-    <!-- =========================
-         AI OP MOBIELE TELEFOON
-    ========================= -->
+    <!-- AI OP MOBIELE TELEFOON -->
 
     <section id="mobiel">
 
@@ -861,14 +638,16 @@
                 <h3>Mijn telefoon</h3>
 
                 <p>
-                    Ik heb een <strong>Iphone 13 Mini</strong>.
+                    Ik heb een
+                    <strong>[VUL HIER JOUW TELEFOON IN]</strong>.
                 </p>
 
                 <p>
                     Op moderne smartphones wordt AI op verschillende manieren
-                    gebruikt. Denk bijvoorbeeld aan camerafuncties die automatisch
-                    scènes herkennen, stemherkenning, tekstvoorspellingen en
-                    functies die foto's automatisch verbeteren.
+                    gebruikt. Denk bijvoorbeeld aan camerafuncties die
+                    automatisch scènes herkennen, stemherkenning,
+                    tekstvoorspellingen en functies die foto's automatisch
+                    verbeteren.
                 </p>
 
                 <p>
@@ -886,8 +665,8 @@
                 <p>
                     Een camera kan bijvoorbeeld herkennen of je een persoon,
                     dier, landschap of nachtelijke scène fotografeert.
-                    De software kan vervolgens automatisch instellingen aanpassen
-                    om de foto te verbeteren.
+                    De software kan vervolgens automatisch instellingen
+                    aanpassen om de foto te verbeteren.
                 </p>
 
             </div>
@@ -897,9 +676,7 @@
     </section>
 
 
-    <!-- =========================
-         AI ARTIKEL
-    ========================= -->
+    <!-- AI-ARTIKEL -->
 
     <section id="artikel">
 
@@ -920,20 +697,20 @@
                     <strong>25 juni 2026</strong>.
                 </p>
 
-
                 <h3>Samenvatting</h3>
 
                 <p>
                     In het artikel wordt onderzocht hoe studenten AI gebruiken
-                    tijdens hun opleiding en hoe zij de voordelen en nadelen ervan
-                    ervaren. De onderzoekers onderzochten 467 studenten.
+                    tijdens hun opleiding en hoe zij de voordelen en nadelen
+                    ervan ervaren. De onderzoekers onderzochten 467 studenten.
                 </p>
 
                 <p>
                     Uit het onderzoek bleek dat AI door veel studenten regelmatig
-                    wordt gebruikt voor bijvoorbeeld studeren, onderzoek doen en
-                    teksten schrijven. Veel studenten vinden AI handig omdat het
-                    tijd kan besparen en kan helpen bij het begrijpen van lesstof.
+                    wordt gebruikt voor bijvoorbeeld studeren, onderzoek doen
+                    en teksten schrijven. Veel studenten vinden AI handig omdat
+                    het tijd kan besparen en kan helpen bij het begrijpen van
+                    lesstof.
                 </p>
 
                 <p>
@@ -943,30 +720,28 @@
                     van AI-gebruik op hun opleiding zijn toegestaan.
                 </p>
 
-
                 <h3>Mijn mening</h3>
 
                 <p>
                     Ik vind dat AI handig kan zijn voor school, zolang je het
                     gebruikt als hulpmiddel en niet alles door AI laat doen.
-                    Je moet zelf blijven nadenken en controleren of de informatie
-                    klopt.
+                    Je moet zelf blijven nadenken en controleren of de
+                    informatie klopt.
                 </p>
 
                 <p>
-                    Ik herken ook het punt uit het artikel dat AI ervoor kan zorgen
-                    dat je minder zelfstandig nadenkt wanneer je het voor iedere
-                    opdracht gebruikt. Daarom vind ik dat je vooral AI moet gebruiken
-                    om iets te begrijpen en te leren.
+                    Ik herken ook het punt uit het artikel dat AI ervoor kan
+                    zorgen dat je minder zelfstandig nadenkt wanneer je het
+                    voor iedere opdracht gebruikt. Daarom vind ik dat je vooral
+                    AI moet gebruiken om iets te begrijpen en te leren.
                 </p>
-
 
                 <p class="source">
                     Bron:
                     <a
                         href="https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1812390/full"
                         target="_blank">
-                        Frontiers in Education – Artificial intelligence in higher education
+                        Frontiers in Education
                     </a>
                 </p>
 
@@ -977,9 +752,7 @@
     </section>
 
 
-    <!-- =========================
-         FOOTER
-    ========================= -->
+    <!-- FOOTER -->
 
     <footer>
 
