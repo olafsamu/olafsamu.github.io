@@ -1,0 +1,995 @@
+
+/*
+==========================================================
+BTD6 INFORMATICA WEBSITE
+CSS - BINAIR STELSEL
+==========================================================
+
+WAT DOET DIT BESTAND?
+
+CSS staat voor Cascading Style Sheets.
+
+HTML bepaalt welke onderdelen op de website staan.
+CSS bepaalt hoe deze onderdelen eruitzien.
+
+In dit bestand regelen we onder andere:
+- Kleuren
+- Lettertypen
+- Afstanden
+- Achtergronden
+- Knoppen
+- Afbeeldingen
+- Mobiele weergave
+
+==========================================================
+*/
+
+
+/* ========================================================
+   1. ALGEMENE INSTELLINGEN
+======================================================== */
+
+/*
+   De ster (*) is een algemene selector.
+
+   Hierdoor gelden deze instellingen voor ALLE elementen
+   op de webpagina.
+*/
+
+* {
+
+    /* Verwijdert standaard buitenruimte van elementen. */
+    margin: 0;
+
+    /* Verwijdert standaard binnenruimte van elementen. */
+    padding: 0;
+
+    /*
+       Zorgt ervoor dat padding en borders worden meegerekend
+       in de totale breedte en hoogte van een element.
+    */
+    box-sizing: border-box;
+
+    /*
+       Zorgt ervoor dat de pagina soepel naar een onderdeel
+       scrolt wanneer je op een link naar een #id klikt.
+    */
+    scroll-behavior: smooth;
+
+}
+
+
+/* ========================================================
+   2. BASIS VAN DE WEBPAGINA
+======================================================== */
+
+/*
+   De body bevat alle zichtbare inhoud van de website.
+
+   Hier stellen we de algemene stijl in.
+*/
+
+body {
+
+    /* Het lettertype dat op de hele pagina wordt gebruikt. */
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* Donkerblauwe achtergrondkleur. */
+    background: #101820;
+
+    /* Alle standaard tekst wordt wit. */
+    color: white;
+
+    /*
+       Bepaalt de regelafstand.
+       1.6 betekent dat regels iets verder uit elkaar staan.
+    */
+    line-height: 1.6;
+
+}
+
+
+/* ========================================================
+   3. NAVIGATIE
+======================================================== */
+
+/*
+   De navigatiebalk staat bovenaan de website.
+
+   position: fixed zorgt ervoor dat de balk op zijn plek
+   blijft staan wanneer de bezoeker naar beneden scrolt.
+*/
+
+nav {
+
+    /* Maakt de navigatiebalk vast aan het scherm. */
+    position: fixed;
+
+    /* Plaatst de balk tegen de bovenkant. */
+    top: 0;
+
+    /* Plaatst de balk tegen de rechterkant. */
+    right: 0;
+
+    /* De navigatie gebruikt de volledige schermbreedte. */
+    width: 100%;
+
+    /* Donkere achtergrond met een beetje doorzichtigheid. */
+    background: rgba(10, 15, 20, 0.95);
+
+    /*
+       Zorgt ervoor dat de navigatie boven andere onderdelen
+       wordt weergegeven.
+    */
+    z-index: 1000;
+
+    /* Ruimte binnen de navigatiebalk. */
+    padding: 15px 35px;
+
+    /*
+       Flexbox helpt om onderdelen netjes naast elkaar
+       te plaatsen.
+    */
+    display: flex;
+
+    /* Plaatst het menu aan de rechterkant. */
+    justify-content: flex-end;
+
+    /* Geeft de navigatie een schaduw. */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+
+}
+
+
+/* ========================================================
+   4. UITKLAPMENU
+======================================================== */
+
+/*
+   De dropdown bevat de menuknop en de lijst met links.
+
+   position: relative zorgt ervoor dat het uitklapmenu
+   zich ten opzichte van deze container positioneert.
+*/
+
+.dropdown {
+
+    position: relative;
+
+    /* Laat het menu zich gedragen als een inline-element. */
+    display: inline-block;
+
+}
+
+
+/* DE MENU-KNOP */
+
+.dropbtn {
+
+    /* Gele achtergrondkleur. */
+    background: #f2a900;
+
+    /* Donkere tekst voor goed contrast. */
+    color: #111;
+
+    /* Ruimte binnen de knop. */
+    padding: 12px 20px;
+
+    /* Grootte van de tekst. */
+    font-size: 16px;
+
+    /* Maakt de tekst dikgedrukt. */
+    font-weight: bold;
+
+    /* Verwijdert de standaard rand van de knop. */
+    border: none;
+
+    /* Maakt de hoeken afgerond. */
+    border-radius: 8px;
+
+    /* Verandert de muisaanwijzer in een handje. */
+    cursor: pointer;
+
+}
+
+
+/* HET UITKLAPMENU ZELF */
+
+.dropdown-content {
+
+    /*
+       display: none betekent dat het menu standaard
+       niet zichtbaar is.
+    */
+    display: none;
+
+    /* Zorgt ervoor dat het menu boven andere elementen ligt. */
+    position: absolute;
+
+    /* Lijnt de rechterkant van het menu uit met de knop. */
+    right: 0;
+
+    /* Donkere achtergrond van het menu. */
+    background: #202a33;
+
+    /* Minimale breedte van het menu. */
+    min-width: 280px;
+
+    /* Afgeronde hoeken. */
+    border-radius: 8px;
+
+    /* Verbergt inhoud die buiten de afgeronde hoeken valt. */
+    overflow: hidden;
+
+    /* Schaduw rondom het menu. */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+
+}
+
+
+/* DE LINKS IN HET UITKLAPMENU */
+
+.dropdown-content a {
+
+    /* Witte tekstkleur. */
+    color: white;
+
+    /* Ruimte rondom de linktekst. */
+    padding: 13px 17px;
+
+    /* Verwijdert de standaard onderstreping. */
+    text-decoration: none;
+
+    /* Iedere link krijgt een eigen regel. */
+    display: block;
+
+    /* Maakt kleurveranderingen soepel. */
+    transition: 0.2s;
+
+}
+
+
+/* WAT GEBEURT ER ALS JE OVER EEN LINK GAAT? */
+
+.dropdown-content a:hover {
+
+    /* De achtergrond wordt geel. */
+    background: #f2a900;
+
+    /* De tekst wordt donker. */
+    color: #111;
+
+}
+
+
+/* 
+   Als je met de muis over de dropdown beweegt,
+   wordt het verborgen menu zichtbaar.
+*/
+
+.dropdown:hover .dropdown-content {
+
+    display: block;
+
+}
+
+
+/* ========================================================
+   5. PAGINA HEADER
+======================================================== */
+
+/*
+   Dit is het grote bovenste gedeelte met de titel
+   'Binair stelsel'.
+*/
+
+.page-header {
+
+    /* Achtergrondkleur van de header. */
+    background: #16222d;
+
+    /*
+       Binnenruimte:
+       140px bovenaan, 10% links en rechts,
+       70px onderaan.
+    */
+    padding: 140px 10% 70px;
+
+    /* Zet de tekst in het midden. */
+    text-align: center;
+
+}
+
+
+/* HOOFDTITEL */
+
+.page-header h1 {
+
+    /* Grote titel. */
+    font-size: 55px;
+
+    /* BTD6-geïnspireerde gele kleur. */
+    color: #f2a900;
+
+    /* Zwarte schaduw achter de letters. */
+    text-shadow: 3px 3px 0 #000;
+
+}
+
+
+/* ONDERTITEL */
+
+.page-header p {
+
+    /* Tekstgrootte. */
+    font-size: 20px;
+
+    /* Ruimte boven de ondertitel. */
+    margin-top: 15px;
+
+}
+
+
+/* ========================================================
+   6. SECTIES
+======================================================== */
+
+/*
+   Een section is een apart gedeelte van de pagina.
+
+   De padding zorgt ervoor dat de inhoud niet tegen
+   de randen van het scherm aan staat.
+*/
+
+section {
+
+    padding: 80px 10%;
+
+}
+
+
+/*
+   nth-child(even) selecteert bepaalde secties
+   op basis van hun positie als kind van de body.
+
+   Hiermee wisselen we achtergrondkleuren af.
+*/
+
+section:nth-child(even) {
+
+    background: #16222d;
+
+}
+
+
+/* De andere secties krijgen een iets donkerdere achtergrond. */
+
+section:nth-child(odd) {
+
+    background: #101820;
+
+}
+
+
+/* ========================================================
+   7. CONTAINER
+======================================================== */
+
+/*
+   De container houdt de inhoud op een maximale breedte.
+
+   Hierdoor worden alinea's op grote schermen niet
+   extreem breed.
+*/
+
+.container {
+
+    /* Maximale breedte van de inhoud. */
+    max-width: 1050px;
+
+    /* Centreert de container. */
+    margin: auto;
+
+}
+
+
+/* ========================================================
+   8. KOPPEN EN ALINEA'S
+======================================================== */
+
+
+/* HOOFDKOPPEN BINNEN DE SECTIES */
+
+h2 {
+
+    /* Grootte van de kop. */
+    font-size: 40px;
+
+    /* Gele kleur. */
+    color: #f2a900;
+
+    /* Ruimte onder de kop. */
+    margin-bottom: 25px;
+
+}
+
+
+/* KLEINERE KOPPEN */
+
+h3 {
+
+    /* Iets lichtere gele kleur. */
+    color: #ffc533;
+
+    /* Ruimte boven de kop. */
+    margin-top: 25px;
+
+    /* Ruimte onder de kop. */
+    margin-bottom: 10px;
+
+}
+
+
+/* ALINEA'S */
+
+p {
+
+    /* Ruimte onder iedere alinea. */
+    margin-bottom: 15px;
+
+}
+
+
+/* ========================================================
+   9. KAARTEN
+======================================================== */
+
+/*
+   De class card wordt gebruikt voor de donkere vakken
+   waarin tekst en andere inhoud staat.
+*/
+
+.card {
+
+    /* Achtergrond van de kaart. */
+    background: #202d38;
+
+    /* Ruimte binnen de kaart. */
+    padding: 25px;
+
+    /* Ruimte tussen verschillende kaarten. */
+    margin: 20px 0;
+
+    /* Afgeronde hoeken. */
+    border-radius: 12px;
+
+    /* Schaduw onder en rondom de kaart. */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* ========================================================
+   10. AFBEELDINGEN
+======================================================== */
+
+/*
+   Deze class wordt gebruikt voor de afbeelding
+   over het binaire stelsel.
+*/
+
+.binary-image {
+
+    /* De afbeelding wordt als blok weergegeven. */
+    display: block;
+
+    /* De afbeelding mag maximaal de breedte van de container hebben. */
+    width: 100%;
+
+    /* De afbeelding wordt niet breder dan 800 pixels. */
+    max-width: 800px;
+
+    /* De afbeelding wordt niet hoger dan 500 pixels. */
+    max-height: 500px;
+
+    /*
+       contain zorgt ervoor dat de volledige afbeelding
+       zichtbaar blijft zonder vervorming.
+    */
+    object-fit: contain;
+
+    /* Centreert de afbeelding en geeft ruimte erboven en eronder. */
+    margin: 30px auto;
+
+    /* Afgeronde hoeken. */
+    border-radius: 15px;
+
+    /* Schaduw rondom de afbeelding. */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+
+}
+
+
+/* TEKST ONDER DE AFBEELDING */
+
+.image-caption {
+
+    /* Zet de tekst in het midden. */
+    text-align: center;
+
+    /* Lichtgrijze tekstkleur. */
+    color: #c4d3dd;
+
+    /* Kleinere tekst. */
+    font-size: 14px;
+
+}
+
+
+/* ========================================================
+   11. BINAIRE BLOKKEN
+======================================================== */
+
+/*
+   binary-box bevat de vier vakken met voorbeelden.
+
+   CSS Grid verdeelt deze vakken in twee kolommen.
+*/
+
+.binary-box {
+
+    /* Activeert CSS Grid. */
+    display: grid;
+
+    /*
+       repeat(2, 1fr) betekent:
+       maak twee kolommen van gelijke breedte.
+    */
+    grid-template-columns: repeat(2, 1fr);
+
+    /* Ruimte tussen de vakken. */
+    gap: 15px;
+
+    /* Ruimte boven de vakken. */
+    margin-top: 20px;
+
+}
+
+
+/* IEDER AFZONDERLIJK BIT-VAK */
+
+.bit {
+
+    /* Achtergrondkleur. */
+    background: #273945;
+
+    /* Ruimte binnen het vak. */
+    padding: 20px;
+
+    /* Afgeronde hoeken. */
+    border-radius: 10px;
+
+    /* Centreert de tekst. */
+    text-align: center;
+
+}
+
+
+/* HET GROTE CIJFER IN HET BIT-VAK */
+
+.bit strong {
+
+    /* Gele kleur. */
+    color: #f2a900;
+
+    /* Grote tekst. */
+    font-size: 28px;
+
+}
+
+
+/* ========================================================
+   12. REKENVOORBEELDEN
+======================================================== */
+
+/*
+   Deze class wordt gebruikt voor de grote
+   rekenvoorbeelden, zoals 1101₂ = 13₁₀.
+*/
+
+.example {
+
+    /* Grote tekst. */
+    font-size: 28px;
+
+    /* Zet de inhoud in het midden. */
+    text-align: center;
+
+    /* Donkere achtergrond. */
+    background: #111a21;
+
+    /* Ruimte binnen het voorbeeld. */
+    padding: 20px;
+
+    /* Afgeronde hoeken. */
+    border-radius: 10px;
+
+    /* Ruimte boven en onder het voorbeeld. */
+    margin: 20px 0;
+
+}
+
+
+/* ========================================================
+   13. BINARY BONANZA
+======================================================== */
+
+
+/* CONTAINER VAN HET SPEL */
+
+.game-container {
+
+    /* Flexbox helpt om het spel te centreren. */
+    display: flex;
+
+    /* Zet het spel horizontaal in het midden. */
+    justify-content: center;
+
+    /* Ruimte boven het spel. */
+    margin-top: 30px;
+
+    /*
+       Als het spel op een klein scherm te breed is,
+       kan de bezoeker horizontaal scrollen.
+    */
+    overflow-x: auto;
+
+}
+
+
+/* HET IFRAME */
+
+iframe {
+
+    /* Verwijdert de standaard rand. */
+    border: none;
+
+    /* Afgeronde hoeken. */
+    border-radius: 10px;
+
+    /* Voorkomt dat het iframe breder wordt dan zijn container. */
+    max-width: 100%;
+
+}
+
+
+/* KLIKBARE LINK RONDOM DE SPELAFBEELDING */
+
+.game-link {
+
+    /* De link krijgt een eigen regel. */
+    display: block;
+
+    /* De link wordt niet breder dan 700 pixels. */
+    width: 100%;
+    max-width: 700px;
+
+    /* Centreert de link. */
+    margin: 25px auto;
+
+    /* Verwijdert de standaard onderstreping. */
+    text-decoration: none;
+
+}
+
+
+/* DE AFBEELDING DIE NAAR HET SPEL LINKT */
+
+.game-image {
+
+    /* Neemt de volledige breedte van de link in. */
+    width: 100%;
+
+    /* Vaste hoogte van de afbeelding. */
+    height: 180px;
+
+    /* Afgeronde hoeken. */
+    border-radius: 12px;
+
+    /* Verbergt inhoud die buiten het vak valt. */
+    overflow: hidden;
+
+    /* Schaduw rondom het vak. */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+
+    /* Maakt de hover-animatie soepel. */
+    transition: 0.2s;
+
+}
+
+
+/* EFFECT ALS JE OVER DE SPELAFBEELDING GAAT */
+
+.game-image:hover {
+
+    /* Maakt de afbeelding iets groter. */
+    transform: scale(1.02);
+
+}
+
+
+/* GESTILEERDE BINARY BONANZA AFBEELDING */
+
+.binary-art {
+
+    /* Vult het hele game-image vak. */
+    width: 100%;
+    height: 100%;
+
+    /*
+       Maakt een kleurverloop.
+       De kleuren lopen van blauw naar groen.
+    */
+    background: linear-gradient(135deg, #1d4e89, #0b6e4f);
+
+    /* Activeert Flexbox. */
+    display: flex;
+
+    /* Plaatst de tekst onder elkaar. */
+    flex-direction: column;
+
+    /* Centreert de tekst horizontaal. */
+    align-items: center;
+
+    /* Centreert de tekst verticaal. */
+    justify-content: center;
+
+    /* Witte tekst. */
+    color: white;
+
+    /* Dikke letters. */
+    font-weight: bold;
+
+    /* Centreert de tekst. */
+    text-align: center;
+
+}
+
+
+/* KLEINE BINAIRE TEKST */
+
+.binary-art .small {
+
+    /* Tekstgrootte. */
+    font-size: 18px;
+
+    /* Ruimte tussen de letters. */
+    letter-spacing: 5px;
+
+    /* Maakt de tekst een beetje doorzichtig. */
+    opacity: 0.8;
+
+}
+
+
+/* GROTE TITEL OP DE SPELAFBEELDING */
+
+.binary-art .big {
+
+    /* Grote letters. */
+    font-size: 42px;
+
+    /* Kleine ruimte boven en onder. */
+    margin: 5px 0;
+
+}
+
+
+/* ========================================================
+   14. KNOPPEN
+======================================================== */
+
+/*
+   Deze class wordt gebruikt voor de knop
+   waarmee je teruggaat naar de homepage.
+*/
+
+.button {
+
+    /* De link gedraagt zich als een knop. */
+    display: inline-block;
+
+    /* Ruimte boven de knop. */
+    margin-top: 20px;
+
+    /* Ruimte binnen de knop. */
+    padding: 13px 24px;
+
+    /* Gele achtergrond. */
+    background: #f2a900;
+
+    /* Donkere tekst. */
+    color: #111;
+
+    /* Geen onderstreping. */
+    text-decoration: none;
+
+    /* Dikke tekst. */
+    font-weight: bold;
+
+    /* Afgeronde hoeken. */
+    border-radius: 8px;
+
+    /* Soepele animatie. */
+    transition: 0.2s;
+
+}
+
+
+/* EFFECT BIJ HOVEREN OVER DE KNOP */
+
+.button:hover {
+
+    /* De knop wordt iets groter. */
+    transform: scale(1.05);
+
+    /* De achtergrond wordt lichter geel. */
+    background: #ffc533;
+
+}
+
+
+/* ========================================================
+   15. TEKST EN KAARTEN CENTREREN
+======================================================== */
+
+/*
+   Deze classes vervangen de inline CSS die eerst
+   rechtstreeks in het HTML-bestand stond.
+*/
+
+/* Centreert alleen de tekst. */
+.centered-text {
+
+    text-align: center;
+
+}
+
+
+/* Centreert alle inhoud binnen een kaart. */
+.centered-card {
+
+    text-align: center;
+
+}
+
+
+/* ========================================================
+   16. FOOTER
+======================================================== */
+
+/*
+   De footer is het onderste gedeelte van de pagina.
+*/
+
+footer {
+
+    /* Centreert de tekst. */
+    text-align: center;
+
+    /* Ruimte rondom de tekst. */
+    padding: 30px;
+
+    /* Bijna zwarte achtergrond. */
+    background: #080d11;
+
+    /* Grijze tekstkleur. */
+    color: #aaa;
+
+}
+
+
+/* ========================================================
+   17. MOBIELE WEERGAVE
+======================================================== */
+
+/*
+   Met een media query kunnen we andere CSS-regels
+   gebruiken wanneer het scherm kleiner is.
+
+   max-width: 800px betekent dat deze regels gelden
+   bij een schermbreedte van maximaal 800 pixels.
+
+   Dit maakt de website geschikt voor telefoons
+   en kleinere tablets.
+*/
+
+@media (max-width: 800px) {
+
+
+    /* Titel wordt kleiner op mobiele schermen. */
+
+    .page-header h1 {
+
+        font-size: 40px;
+
+    }
+
+
+    /* Minder ruimte aan de zijkanten van secties. */
+
+    section {
+
+        padding: 70px 6%;
+
+    }
+
+
+    /* Navigatie krijgt kleinere afstanden. */
+
+    nav {
+
+        padding: 12px 15px;
+
+    }
+
+
+    /* Uitklapmenu wordt iets smaller. */
+
+    .dropdown-content {
+
+        right: 0;
+
+        min-width: 230px;
+
+    }
+
+
+    /*
+       De vier bit-vakken worden onder elkaar geplaatst.
+       Dit voorkomt dat ze te smal worden op een telefoon.
+    */
+
+    .binary-box {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    /* Afbeelding wordt minder hoog. */
+
+    .binary-image {
+
+        max-height: 350px;
+
+    }
+
+
+    /* Grote tekst op de Binary Bonanza afbeelding wordt kleiner. */
+
+    .binary-art .big {
+
+        font-size: 28px;
+
+    }
+
+
+    /* Kleine tekst krijgt minder ruimte tussen letters. */
+
+    .binary-art .small {
+
+        font-size: 12px;
+
+        letter-spacing: 2px;
+
+    }
+
+}
+
+
+/*
+==========================================================
+EINDE VAN HET CSS-BESTAND
+==========================================================
+*/
